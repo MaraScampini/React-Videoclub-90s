@@ -11,11 +11,11 @@ export const homeMovies = async () => {
   }
 }
 
-export const detailMovie = async (id) => {
-  try {
-    let res = await axios.get(`${URL}/movies/id/${id}`);
-    return res.data;
-  } catch (error) {
-    
-  }
-}
+  export const searchMovies = async (criteria) => {
+    try {
+      let res = await axios.get(
+        `http://localhost:3000/movies/title/${criteria}`
+      );
+      return res.data;
+    } catch (error) {}
+  };
