@@ -19,17 +19,18 @@ const Home = () => {
   const films = searchedFilm.search;
   const query = searchedFilm.query;
 
-  useEffect(() => {
-    if (movies.length === 0) {
-      homeMovies().then((movies) => setMovies(movies));
-    }
-  });
+    useEffect(() => {
+      if (movies.length === 0) {
+        console.log("1")
+        homeMovies().then((movies) => setMovies(movies));
+      }
+    });
+
 
   if (films.length !== 0 && query !== "") {
     return (
       <div className="homeDesign">
         {films.map((film, index) => {
-          if (film.poster_path !== null) {
             return (
               <div className="cardDesign" key={index}>
                 <img
@@ -39,7 +40,7 @@ const Home = () => {
                 />
               </div>
             );
-          }
+          
         })}
       </div>
     );

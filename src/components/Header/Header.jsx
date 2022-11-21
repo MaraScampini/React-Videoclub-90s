@@ -47,10 +47,10 @@ const Header = () => {
   if (userCredentials?.credentials.token !== undefined) {
     return (
       <div className="headerDesign">
-        <div onclick={() => navigate("/movies")} className="linkDesign">
+        <div onClick={() => navigate("/movies")} className="linkDesign">
           Movies
         </div>
-        <div onclick={() => navigate("/about")} className="linkDesign">
+        <div onClick={() => navigate("/about")} className="linkDesign">
           About Us
         </div>
 
@@ -75,10 +75,10 @@ const Header = () => {
   } else {
     return (
       <div className="headerDesign">
-        <div onclick={() => navigate("/movies")} className="linkDesign">
+        <div onClick={() => navigate("/movies")} className="linkDesign">
           Movies
         </div>
-        <div onclick={() => navigate("/about")} className="linkDesign">
+        <div onClick={() => navigate("/about")} className="linkDesign">
           About Us
         </div>
         <div className="logoSearchDesign">

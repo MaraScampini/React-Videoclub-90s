@@ -11,6 +11,15 @@ export const homeMovies = async () => {
   }
 }
 
+export const allMovies = async () => {
+  try {
+    let res = await axios.get(`${URL}/movies/`);
+    return res.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
   export const searchMovies = async (criteria) => {
     try {
       let res = await axios.get(
