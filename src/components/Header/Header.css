@@ -1,17 +1,38 @@
 
 .headerDesign {
-    font-family:'Courier New', Courier, monospace;
-    height: 20vh;
-    width: 100vw;
-
+    background-color: #ffe083;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-end;
-
-    background-color: lightgrey;
+    height: 15vh;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid black;
 }
 
+.logoSearchDesign {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inputDesign {
+    width: 100%;
+    border-radius: 1em;
+    border: 1px solid black;
+    padding: 0.1em 0.5em;
+      box-shadow: rgba(0, 0, 0) 2px 3px;
+
+}
+
+.inputDesign::before{
+    content: url(../../assets/search.svg);
+    background-color: red;
+    display: flex;
+    justify-content: flex-end;
+    width: 5em;
+    height: 5em;
+}
 .linkDesign {
 
     font-weight: bold;

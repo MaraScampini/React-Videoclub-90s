@@ -1,0 +1,11 @@
+.homeDesign {
+  background-color: #ffe083;
+}
+
+.rowDesign {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+

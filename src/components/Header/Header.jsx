@@ -47,13 +47,14 @@ const Header = () => {
   if (userCredentials?.credentials.token !== undefined) {
     return (
       <div className="headerDesign">
-        <div onClick={() => navigate("/movies")} className="linkDesign">
-          Movies
+        <div className="linksDesign">
+          <div onClick={() => navigate("/movies")} className="linkDesign">
+            Movies
+          </div>
+          <div onClick={() => navigate("/about")} className="linkDesign">
+            About Us
+          </div>
         </div>
-        <div onClick={() => navigate("/about")} className="linkDesign">
-          About Us
-        </div>
-
         <div className="logoSearchDesign">
           <div onClick={() => navigate("/")}>LOGO</div>
           <input
@@ -64,11 +65,13 @@ const Header = () => {
             onChange={(e) => criteriaHandler(e)}
           />
         </div>
-        <div onClick={() => navigate("/profile")} className="linkDesign">
-          Hi, {userCredentials?.credentials?.name}!
-        </div>
-        <div onClick={() => logout()} className="linkDesign">
-          Logout
+        <div className="linksDesign">
+          <div onClick={() => navigate("/profile")} className="linkDesign">
+            Hi, {userCredentials?.credentials?.name}!
+          </div>
+          <div onClick={() => logout()} className="linkDesign">
+            Logout
+          </div>
         </div>
       </div>
     );
