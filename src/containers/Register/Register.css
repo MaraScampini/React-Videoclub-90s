@@ -1,0 +1,35 @@
+
+
+.registerDesign{
+
+    background-color: #FFF7E2;
+    width: 100vw;
+    height: 90vh;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.inputsBox{
+    background-color: white;
+    height: 24em;
+    width: 50em;
+    
+    /* display: flex;
+    justify-content: center; */
+    box-shadow: rgba(0, 0, 0) 2px 3px;
+    
+
+    border-radius: 15px;
+    border: solid;
+}
+
+.inputDesign{
+    border-radius: 50px;
+    height: 2em;
+    width: 20em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+}
