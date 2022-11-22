@@ -5,6 +5,8 @@ import Home from './containers/Home/Home';
 import MovieDetail from './components/Films/MovieDetail/MovieDetail';
 import Movies from './containers/Movies/Movies';
 import { allMovies, homeMovies } from './services/ApiCalls';
+import Register from './containers/Register/Register';
+import Login from './containers/Login/Login';
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/filmdetail" element={<MovieDetail />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </div>
