@@ -31,18 +31,16 @@ function Movies() {
 
   if (films.length !== 0 && query !== "") {
     return (
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-7">
+      <div className="container-fluid homeDesign">
+        <div className="row d-flex justify-content-center">
+          <div className="col-10 rowDesign">
             {films.map((film, index) => {
               return (
-                <div className="cardDesign" key={index}>
-                  <img
-                    className="imageDesign"
-                    src={`https://image.tmdb.org/t/p/w200/${film.poster_path}`}
-                    onClick={() => clickedMovie(film)}
-                  />
-                </div>
+                <FilmCard
+                  key={index}
+                  movie={film}
+                  clickedMovie={clickedMovie}
+                />
               );
             })}
           </div>
