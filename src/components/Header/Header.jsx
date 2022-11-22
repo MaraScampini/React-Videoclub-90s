@@ -98,15 +98,21 @@ const Header = () => {
   } else {
     return (
       <Navbar collapseOnSelect expand="lg" className="headerDesign">
-        <Container className="navbarCollapsed">
+        <Container>
           <Navbar.Brand href="/">SUPER-8</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="/movies">Movies</Nav.Link>
-              <Nav.Link href="/about">About Us</Nav.Link>
-            </Nav>
-            <Form className="formDesign d-flex">
+          <Navbar.Collapse id="responsive-navbar-nav" className="m-auto">
+            <Nav.Link className="fw-bold m-auto text-center" href="/movies">
+              Movies
+            </Nav.Link>
+            <Nav.Link
+              className="fw-bold mx-auto mt-1 mb-md-1 text-center"
+              href="/about"
+            >
+              About Us
+            </Nav.Link>
+
+            <Form className="formDesign d-flex mt-1 mb-md-1 m-auto">
               <Form.Control
                 type="search"
                 placeholder="Search"
@@ -127,10 +133,18 @@ const Header = () => {
                 </svg>
               </Button>
             </Form>
-            <Nav>
-              <Nav.Link href="/login">Login</Nav.Link>
-              <Nav.Link href="/register">Register</Nav.Link>
-            </Nav>
+            <Nav.Link
+              className="fw-bold mx-auto mt-1 mb-md-1 text-center"
+              href="/login"
+            >
+              Login
+            </Nav.Link>
+            <Nav.Link
+              className="fw-bold mx-auto mt-1 mb-md-1 text-center"
+              href="/register"
+            >
+              Register
+            </Nav.Link>
           </Navbar.Collapse>
         </Container>
       </Navbar>
