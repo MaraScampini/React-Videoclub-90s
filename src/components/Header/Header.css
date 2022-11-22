@@ -1,21 +1,67 @@
-
 .headerDesign {
-    font-family:'Courier New', Courier, monospace;
-    height: 20vh;
-    width: 100vw;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-end;
-
-    background-color: lightgrey;
+  background-color: #ffe083;
+  display: flex;
+  /* height: 15vh; */
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
 }
 
+.navbarCollapsed {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+}
+
+@media(max-width: 992px) {
+    .navbarCollapsed{
+        flex-direction: column;
+    }
+}
+
+#navbar {
+  background-color: #ffe083;
+  display: flex;
+  /* height: 15vh; */
+  width: 100vw;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.collapseDesign {
+  background-color: #ffe083;
+  height: 15vh;
+  border-bottom: 1px solid black;
+}
+
+.formDesign {
+  width: 30vw;
+  border-radius: 3em;
+  background-color: white;
+  border: 1px solid black;
+  padding: 0.1em 0.5em;
+  box-shadow: rgba(0, 0, 0) 2px 3px;
+}
+
+#inputDesign{
+    border: 1px solid white;
+}
+
+#inputDesign:focus{
+    border: none;
+    box-shadow: none;
+}
 .linkDesign {
+  font-weight: bold;
 
-    font-weight: bold;
+  margin-right: 3em;
+  margin-bottom: 1.5em;
+}
 
-    margin-right: 3em;
-    margin-bottom: 1.5em;
+#buttonDesign{
+    border: none;
+    background-color: transparent;
 }
