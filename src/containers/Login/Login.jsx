@@ -1,6 +1,8 @@
 
 import React, { useState, useEffect } from "react";
 import "./Login.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 
 const Login = () => {
@@ -16,12 +18,12 @@ const Login = () => {
 
             <input className="inputDesign" type="Email" placeholder="  Email ... |" />
             <input className="inputDesign" type="Password" placeholder="  Password ... |" />
-            <input className="inputDesign" type="Password" placeholder="  Repeat Password ... |" />
+            
 
             <div className="col text-center align-items-center">
 
-            {/* Aquí quiero meter los botones, pero al importarlos de bootstrap me da un error */}
-            
+            <button className="buttonDesign">Log In</button>
+
             </div>
 
           </div>

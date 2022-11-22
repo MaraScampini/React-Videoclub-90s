@@ -2,16 +2,23 @@
 import React, { useState, useEffect } from "react";
 import "./Register.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Image from 'react-bootstrap/Image' //esto lo añado para poder importar una imagen
+import boca from '../../images/boca.png'
+import rayo from '../../images/rayo.png'
 
 
 const Register = () => {
 
   return (
 
-    <div className="container-fluid registerDesign  d-flex justify-content-center align-items-center">
+    <div className="container-fluid registerDesign d-flex justify-content-center align-items-center">
+
+      <Image className="bocaImage zoom" src={boca}></Image>
+      <Image className="rayoImage zoom" src={rayo}></Image>
+
 
         <div className="row">
-          <div className="col inputsBox text-center align-items-center">
+          <div className="col-12 inputsBox text-center align-items-center">
 
             <p>REGISTER </p>
 
@@ -22,7 +29,9 @@ const Register = () => {
 
             <div className="col text-center align-items-center">
 
-            {/* Aquí quiero meter los botones, pero al importarlos de bootstrap me da un error */}
+              <button className="buttonDesign">Register</button>
+              
+            
             </div>
 
 
