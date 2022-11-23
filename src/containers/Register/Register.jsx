@@ -42,7 +42,7 @@ const Register = () => {
   })
 
   const registerUser = async (body) => {
-    let res = await axios.post("http://localhost:33061/user/register", body)
+    let res = await axios.post("http://localhost:3000/auth/register", body)
   }
 
   //Handlers//
