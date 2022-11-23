@@ -10,38 +10,42 @@ import rayo from '../../images/rayo.png'
 const Register = () => {
 
   return (
-
     <div className="container-fluid registerDesign d-flex justify-content-center align-items-center">
-
       <Image className="bocaImage zoom" src={boca}></Image>
       <Image className="rayoImage zoom" src={rayo}></Image>
 
+      <div className="row">
+        <div className="col-12  text-center align-items-center" id="inputsBox">
+          <p>REGISTER </p>
 
-        <div className="row">
-          <div className="col-12 inputsBox text-center align-items-center">
+          <input
+            className="inputDesign"
+            type="Name"
+            placeholder="  User name ... |"
+          />
+          <input
+            className="inputDesign"
+            type="Email"
+            placeholder="  Email ... |"
+          />
+          <input
+            className="inputDesign"
+            type="Password"
+            placeholder="  Password ... |"
+          />
+          <input
+            className="inputDesign"
+            type="Password"
+            placeholder="  Repeat password ... |"
+          />
 
-            <p>REGISTER </p>
-
-            <input className="inputDesign" type="Name" placeholder="  User name ... |" />
-            <input className="inputDesign" type="Email" placeholder="  Email ... |" />
-            <input className="inputDesign" type="Password" placeholder="  Password ... |" />
-            <input className="inputDesign" type="Password" placeholder="  Repeat password ... |" />
-
-            <div className="col text-center align-items-center">
-
-              <button className="buttonDesign">Register</button>
-              
-            
-            </div>
-
-
-
-
+          <div className="col text-center align-items-center">
+            <button className="buttonDesign">Register</button>
           </div>
         </div>
+      </div>
     </div>
-
-  )
+  );
 }
 
 
