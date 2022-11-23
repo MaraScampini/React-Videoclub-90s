@@ -11,7 +11,7 @@
 #inputsBox{
     background-color: white;
     height: 24em;
-    width: 26em;
+    width: 40vw;
     
    
 
@@ -30,7 +30,7 @@
 .inputDesign{
     border-radius: 50px;
     height: 2em;
-    width: 20em;
+    width: 30vw;
     display: flex;
     justify-content: center;
     align-items: center;

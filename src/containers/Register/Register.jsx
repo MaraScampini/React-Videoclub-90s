@@ -10,7 +10,7 @@ import rayo from '../../images/rayo.png'
 const Register = () => {
 
   return (
-    <div className="container-fluid registerDesign d-flex justify-content-center align-items-center">
+    <form className="container-fluid registerDesign d-flex justify-content-center align-items-center">
       <Image className="bocaImage zoom" src={boca}></Image>
       <Image className="rayoImage zoom" src={rayo}></Image>
 
@@ -44,7 +44,7 @@ const Register = () => {
           </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
 
