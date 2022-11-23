@@ -48,7 +48,7 @@
 }
 
 #inputDesign:focus{
-    border: none;
+    border: 1px solid white;
     box-shadow: none;
 }
 .linkDesign {
