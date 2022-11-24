@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { addSearch, filmData, addCriteria } from "../Films/filmSlice";
 import { logout, login, userData } from "../../containers/User/userSlice";
 import { searchMovies } from "../../services/ApiCalls";
+import { useJwt } from "react-jwt";
+
 
 import "./Header.css";
 import { Container, Navbar, Nav, Form, Button } from "react-bootstrap";
@@ -14,8 +16,11 @@ const Header = () => {
   const [criteria, setCriteria] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const userCredentials = useSelector(userData);
-
+  const token = localStorage.getItem("jwt");
+  let {decodedToken} = useJwt(token);
+  if (decodedToken === null) {
+    decodedToken = { name: "" };
+  }
   // Handlers
 
   const criteriaHandler = (e) => {
@@ -25,10 +30,10 @@ const Header = () => {
 
   // Functions
 
-  const logUserOut = () => {
-    dispatch(logout({}));
-    return navigate("/");
-  };
+  const logout = () => {
+    localStorage.removeItem("jwt")
+    navigate("/")
+  }
 
   // Life-cycle
   useEffect(() => {
@@ -45,7 +50,7 @@ const Header = () => {
     console.log(filmData);
   }, [criteria]);
 
-  if (userCredentials?.credentials.token !== undefined) {
+  if (token) {
     return (
       <Navbar collapseOnSelect expand="lg" className="headerDesign">
         <Container>
@@ -90,7 +95,7 @@ const Header = () => {
               onClick={() => navigate("/profile")}
               className="fw-bold mx-auto mt-1 mb-md-1 text-center"
             >
-              Hi, {userCredentials.credentials.name}!
+              Hi, {decodedToken.name}!
             </Nav>
             <Nav
               onClick={() => logout()}
