@@ -24,7 +24,6 @@ function Movies() {
 
   useEffect(() => {
     if (movies.length === 0) {
-      console.log("2");
       allMovies().then((movies) => setMovies(movies));
     }
   });
