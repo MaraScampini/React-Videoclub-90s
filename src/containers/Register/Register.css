@@ -11,7 +11,7 @@
 #inputsBox{
     background-color: white;
     height: 24em;
-    width: 26em;
+    width: 40vw;
     
    
 
@@ -27,10 +27,10 @@
     
 }
 
-.inputDesign{
+.inputRegDesign{
     border-radius: 50px;
     height: 2em;
-    width: 20em;
+    width: 30vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@
     padding: 0 0 0 1em;
 }
 
-#inputDesign:focus{
+#inputRegDesign:focus{
     border: none;
     box-shadow: none;
 }

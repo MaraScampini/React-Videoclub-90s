@@ -47,70 +47,23 @@ const Header = () => {
 
   if (userCredentials?.credentials.token !== undefined) {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">
-          Navbar
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <div className="headerDesign">
-            <div className="linksDesign">
-              <div onClick={() => navigate("/movies")} className="linkDesign">
-                Movies
-              </div>
-              <div onClick={() => navigate("/about")} className="linkDesign">
-                About Us
-              </div>
-            </div>
-            <div className="logoSearchDesign">
-              <div onClick={() => navigate("/")}>LOGO</div>
-              <input
-                className="inputDesign"
-                type="text"
-                name="criteria"
-                placeholder="search a film"
-                onChange={(e) => criteriaHandler(e)}
-              />
-            </div>
-            <div className="linksDesign">
-              <div onClick={() => navigate("/profile")} className="linkDesign">
-                Hi, {userCredentials?.credentials?.name}!
-              </div>
-              <div onClick={() => logout()} className="linkDesign">
-                Logout
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-    );
-  } else {
-    return (
       <Navbar collapseOnSelect expand="lg" className="headerDesign">
         <Container>
-          <Navbar.Brand href="/">SUPER-8</Navbar.Brand>
+          <Navbar.Brand onClick={() => navigate("/")}>SUPER-8</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav" className="m-auto">
-            <Nav.Link className="fw-bold m-auto text-center" href="/movies">
+            <Nav
+              onClick={() => navigate("/movies")}
+              className="fw-bold m-auto text-center"
+            >
               Movies
-            </Nav.Link>
-            <Nav.Link
+            </Nav>
+            <Nav
+              onClick={() => navigate("/about")}
               className="fw-bold mx-auto mt-1 mb-md-1 text-center"
-              href="/about"
             >
               About Us
-            </Nav.Link>
+            </Nav>
 
             <Form className="formDesign d-flex mt-1 mb-md-1 m-auto">
               <Form.Control
@@ -133,18 +86,75 @@ const Header = () => {
                 </svg>
               </Button>
             </Form>
-            <Nav.Link
+            <Nav
+              onClick={() => navigate("/profile")}
               className="fw-bold mx-auto mt-1 mb-md-1 text-center"
-              href="/login"
+            >
+              Hi, {userCredentials.credentials.name}!
+            </Nav>
+            <Nav
+              onClick={() => logout()}
+              className="fw-bold mx-auto mt-1 mb-md-1 text-center"
+            >
+              Logout
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    );
+  } else {
+    return (
+      <Navbar collapseOnSelect expand="lg" className="headerDesign">
+        <Container>
+          <Navbar.Brand onClick={() => navigate("/")}>SUPER-8</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav" className="m-auto">
+            <Nav
+              onClick={() => navigate("/movies")}
+              className="fw-bold m-auto text-center"
+            >
+              Movies
+            </Nav>
+            <Nav
+              onClick={() => navigate("/about")}
+              className="fw-bold mx-auto mt-1 mb-md-1 text-center"
+            >
+              About Us
+            </Nav>
+
+            <Form className="formDesign d-flex mt-1 mb-md-1 m-auto">
+              <Form.Control
+                type="search"
+                placeholder="Search"
+                id="inputDesign"
+                aria-label="Search"
+                onChange={(e) => criteriaHandler(e)}
+              />
+              <Button id="buttonDesign">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="black"
+                  className="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+              </Button>
+            </Form>
+            <Nav
+              onClick={() => navigate("/login")}
+              className="fw-bold mx-auto mt-1 mb-md-1 text-center"
             >
               Login
-            </Nav.Link>
-            <Nav.Link
+            </Nav>
+            <Nav
+              onClick={() => navigate("/register")}
               className="fw-bold mx-auto mt-1 mb-md-1 text-center"
-              href="/register"
             >
               Register
-            </Nav.Link>
+            </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
