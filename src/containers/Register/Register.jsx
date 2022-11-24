@@ -12,11 +12,19 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { errorCheck } from "../../services/usefull";
 import axios from "axios";
+import { useJwt } from "react-jwt";
+
 
 const Register = () => {
-  //Nos traemos las credenciales
-  const credentials = useSelector(userData);
+
   const navigate = useNavigate();
+  const token = localStorage.getItem("jwt")
+  let {decodedToken} = useJwt("jwt")
+
+  if(token) {
+    navigate('/')
+  }
+
 
   const [user, setUser] = useState({
     username: "",
