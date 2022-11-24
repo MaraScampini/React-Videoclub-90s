@@ -42,7 +42,7 @@ const Register = () => {
   })
 
   const registerUser = async (body) => {
-    let res = await axios.post("http://localhost:33061/user/register", body)
+    let res = await axios.post("http://localhost:3000/user/register", body)
   }
 
   //Handlers//
@@ -81,8 +81,9 @@ const Register = () => {
       setUserError((prevState) => ({
         ...prevState,
         incompleteerror: "You must complete every field",
-    }))
-  }}
+      }))
+    }
+  }
 
 
   const body = {
@@ -103,7 +104,7 @@ const Register = () => {
 
   return (
 
-    <form onSubmit={submitHandler} className="container-fluid registerDesign d-flex justify-content-center align-items-center">
+    <form onSubmit={submitHandler} className="container-fluid registerDesign d-flex justify-content-center align-items-center" id="inputsBox">
 
       <Image className="bocaImage zoom" src={boca}></Image>
       <Image className="rayoImage zoom" src={rayo}></Image>
@@ -134,11 +135,7 @@ const Register = () => {
 
             <button className="buttonDesign">Register</button>
 
-
           </div>
-
-
-
 
         </div>
       </div>
