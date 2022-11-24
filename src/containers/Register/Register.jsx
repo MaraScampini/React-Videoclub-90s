@@ -115,19 +115,19 @@ const Register = () => {
 
           <p>REGISTER </p>
 
-          <input onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")} onChange={inputHandler} className="inputDesign" type="text" placeholder="  User name ... |" name="username" />
+          <input onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")} onChange={inputHandler} className="inputRegDesign" type="text" placeholder="  User name ... |" name="username" />
           <div className="errorInput">{userError.usernameerror}</div>
-          <input onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")} onChange={inputHandler} className="inputDesign" type="text" placeholder="  Name ... |" name="name" />
+          <input onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")} onChange={inputHandler} className="inputRegDesign" type="text" placeholder="  Name ... |" name="name" />
           <div className="errorInput">{userError.nameerror}</div>
-          <input onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")} onChange={inputHandler} className="inputDesign" type="text" placeholder="  Address ... |" name="address" />
+          <input onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")} onChange={inputHandler} className="inputRegDesign" type="text" placeholder="  Address ... |" name="address" />
           <div className="errorInput">{userError.addresserror}</div>
-          <input onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")} onChange={inputHandler} className="inputDesign" type="text" placeholder="  City ... |" name="city" />
+          <input onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")} onChange={inputHandler} className="inputRegDesign" type="text" placeholder="  City ... |" name="city" />
           <div className="errorInput">{userError.cityerror}</div>
-          <input onBlur={(e) => errorHandler(e.target.name, e.target.value, "email")} onChange={inputHandler} className="inputDesign" type="Email" placeholder="  Email ... | " name="email" />
+          <input onBlur={(e) => errorHandler(e.target.name, e.target.value, "email")} onChange={inputHandler} className="inputRegDesign" type="Email" placeholder="  Email ... | " name="email" />
           <div className="errorInput">{userError.emailerror}</div>
-          <input onBlur={(e) => errorHandler(e.target.name, e.target.value, "password")} onChange={inputHandler} className="inputDesign" type="Password" placeholder="  Password ... |" name="password" />
+          <input onBlur={(e) => errorHandler(e.target.name, e.target.value, "password")} onChange={inputHandler} className="inputRegDesign" type="Password" placeholder="  Password ... |" name="password" />
           <div className="errorInput">{userError.passworderror}</div>
-          <input onBlur={(e) => errorHandler(e.target.name, e.target.value, "password2", user.password)} onChange={inputHandler} className="inputDesign" type="Password" placeholder="  Repeat password ... |" name="password2" />
+          <input onBlur={(e) => errorHandler(e.target.name, e.target.value, "password2", user.password)} onChange={inputHandler} className="inputRegDesign" type="Password" placeholder="  Repeat password ... |" name="password2" />
           <div className="errorInput">{userError.password2error}</div>
 
           <div className="col text-center align-items-center">

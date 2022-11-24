@@ -27,7 +27,7 @@
     
 }
 
-.inputDesign{
+.inputRegDesign{
     border-radius: 50px;
     height: 2em;
     width: 30vw;
@@ -38,7 +38,7 @@
     padding: 0 0 0 1em;
 }
 
-#inputDesign:focus{
+#inputRegDesign:focus{
     border: none;
     box-shadow: none;
 }
