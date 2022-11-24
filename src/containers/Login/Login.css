@@ -1,0 +1,43 @@
+
+.loginDesign{
+
+    background-color: #FFF7E2;
+    /* width: 100vw; */
+    height: 90vh;
+    
+}
+
+
+.inputDesign{
+    border-radius: 50px;
+    height: 2em;
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+    padding: 0 0 0 1em;
+}
+
+
+#inputsBox{
+    background-color: white;
+    height: 16em;
+    width: 24em;    
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0) 8px 8px;
+    border-radius: 15px;
+    border: 2px solid;
+}
+
+#line{
+    border:1px;
+    
+    background-color: black;
+    height: 2px;
+    width: 105%;
+}

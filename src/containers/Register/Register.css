@@ -10,31 +10,40 @@
 
 #inputsBox{
     background-color: white;
-    height: 24em;
-    width: 40vw;
-    
-   
+    height: 30em;
+    width: 24em;    
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: rgba(0, 0, 0) 8px 8px;
-    
-
     border-radius: 15px;
     border: 2px solid;
-    
 }
+
+#inputsBox::before{
+
+    content: url("../../assets/buttons2.png");
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.2em 0.5em 0 0;
+    height: 4vh;
+    width: 100%;
+
+
+}
+
+
 
 .inputRegDesign{
     border-radius: 50px;
     height: 2em;
-    width: 30vw;
+    width: 25vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     padding: 0 0 0 1em;
 }
 
@@ -55,6 +64,9 @@
     box-shadow: none;
 }
 
+#registerText{
+    margin: 0.2em;
+}
 
 .bocaImage{
 
@@ -65,13 +77,27 @@
 
     transform: rotate(-10deg);
     rotate: 10deg;
+}
 
+.buttonsImage{
+    width: 70px;
+    /* align-self: left; */
+    position: absolute;
+     
+}
+
+#line{
+    border:1px;
+    
+    background-color: black;
+    height: 2px;
+    width: 105%;
 }
 
 .rayoImage{
 
     position:absolute;
-    margin-top: -10em;
+    margin-top: -5em;
     margin-left: -20em;
     width: 150px;
     
@@ -79,8 +105,32 @@
     rotate: 10deg;
 }
 
+.mouseImage{
+
+    position:absolute;
+    margin-top: -10em;
+    margin-left: 15em;
+    width: 50px;
+    
+    transform: rotate(-10deg);
+    rotate: 10deg;
+}
+
+.smileImage{
+
+    position:absolute;
+    margin-top: 10em;
+    margin-left: -15em;
+    
+    /* width: 50px; */
+    
+    transform: rotate(-10deg);
+    rotate: 10deg;
+}
+
+
 @media(max-width: 768px){
-.bocaImage, .rayoImage{
+.bocaImage, .rayoImage, .mouseImage, .smileImage{
     display: none;
 }
 }
