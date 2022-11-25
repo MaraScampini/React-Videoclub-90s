@@ -47,16 +47,6 @@ const Register = () => {
 
   const registerUser = async (body) => {
     let res = await axios.post("http://localhost:3000/auth/register", body);
-    console.log(res);
-    if (res) {
-      navigate("/login");
-    } 
-    else {
-      setUserError((prevState) => ({
-        ...prevState,
-        emailAlreadyInBBDD: "That email is already registered.",
-      }));
-    }
   };
 
   //Handlers//
@@ -84,7 +74,12 @@ const Register = () => {
         ...prevState,
         incompleteerror: "",
       }));
-      registerUser(body);
+      registerUser(body)
+      .then((created) => console.log(created))
+      .catch((error) => {setUserError((prevState) => ({
+        ...prevState,
+        emailAlreadyInBBDD: error.response.data,
+      }))});
     } else {
       setUserError((prevState) => ({
         ...prevState,
