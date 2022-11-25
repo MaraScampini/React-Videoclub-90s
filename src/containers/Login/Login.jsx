@@ -102,6 +102,7 @@ const errorHandler = (field, value, type, password) => {
       <div className="row">
           <div className="col text-center align-items-center" id="inputsBox">
           <div>{userError.empty}</div>
+          <div>{userError.wrongCredentials}</div>
             <p>LOG IN </p>
             <hr id="line"></hr>
 
