@@ -6,6 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { errorCheck } from "../../services/usefull";
+import mouth from "../../assets/mouth.png";
+import ray from "../../assets/ray.png";
+import mouse from "../../assets/mouse.png"
+import smile from "../../assets/smile.png"
 
 
 
@@ -76,12 +80,21 @@ const errorHandler = (field, value, type, password) => {
 
     return (
       
-      <form className="container-fluid loginDesign d-flex justify-content-center align-items-center" onSubmit={(e) => submitLogin(e)}> 
+      <form 
+      onSubmit={(e) => submitLogin(e)}
+      className="container-fluid loginDesign d-flex justify-content-center align-items-center" 
+      > 
       
+      {/* <Image className="bocaImage zoom" src={mouth}></Image>
+      <Image className="rayoImage zoom" src={ray}></Image>
+      <Image className="mouseImage zoom" src={mouse}></Image>
+      <Image className="smileImage zoom" src={smile}></Image> */}
+
       <div className="row">
-          <div className="col inputsBox text-center align-items-center">
+          <div className="col text-center align-items-center" id="inputsBox">
           <div>{userError.empty}</div>
             <p>LOG IN </p>
+            <hr id="line"></hr>
 
             <input className="inputDesign" type="email" name="email" placeholder="  Email ... |" onChange={(e) => inputHandler(e)} onBlur={(e) => errorHandler(e.target.name, e.target.value, "email")} />
             <div>{userError.emailError}</div>
@@ -104,13 +117,13 @@ const errorHandler = (field, value, type, password) => {
 
           </div>
 
-        </div>
+        
        
       
       </form>
 
 
-    </form>
+    
 
     // <div className="container-fluid loginDesign d-flex justify-content-center align-items-center"> 
 
