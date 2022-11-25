@@ -35,46 +35,22 @@ const Login = () => {
     password: ""
   })
 
-  const [userError, setUserError] = useState({
-    emailError: "",
-    passwordError: "",
-    empty: ""
-  })
-
-<<<<<<< HEAD
-  let body = {
-    email: user.email,
-    password: user.password
-  }
-=======
 const [userError, setUserError] = useState({
   emailError: "",
   passwordError: "",
   empty: "",
   wrongCredentials: ""
 })
->>>>>>> 47d61217b55ae102f687dfe12bef161598ecb5ea
+
+let body = {
+  email: user.email,
+  password: user.password
+}
 
   const validateBody = (body) => {
     if (body.email !== "" && body.password !== "") { return true }
   }
 
-  const submitLogin = (e) => {
-    e.preventDefault();
-    if (validateBody(body)) {
-      userLogin(body)
-    } else {
-      setUserError((prevState) => ({
-        ...prevState,
-        empty: "Check all fields are filled"
-      }))
-    }
-  }
-
-<<<<<<< HEAD
-  const inputHandler = (e) => {
-    setUser((prevState) => ({
-=======
 const submitLogin = (e) => {
   e.preventDefault();
   if(validateBody(body)){
@@ -89,7 +65,6 @@ const submitLogin = (e) => {
       });
   } else {
     setUserError((prevState) => ({
->>>>>>> 47d61217b55ae102f687dfe12bef161598ecb5ea
       ...prevState,
       [e.target.name]: e.target.value
     }))
@@ -120,11 +95,6 @@ const submitLogin = (e) => {
         <div className="col text-center align-items-center" id="inputsBox">
 
           <div>{userError.empty}</div>
-<<<<<<< HEAD
-
-          <h3 id="loginText">LOG IN </h3>
-          <hr id="line"></hr>
-=======
           <div>{userError.wrongCredentials}</div>
             <p>LOG IN </p>
             <hr id="line"></hr>
@@ -152,8 +122,6 @@ const submitLogin = (e) => {
             />
             <div>{userError.passwordError}</div>
             
->>>>>>> 47d61217b55ae102f687dfe12bef161598ecb5ea
-
           <input className="inputDesign" type="email" name="email" placeholder="  Email ... |" onChange={(e) => inputHandler(e)} onBlur={(e) => errorHandler(e.target.name, e.target.value, "email")} />
           <div>{userError.emailError}</div>
           <input className="inputDesign" type="password" name="password" placeholder="  Password ... |" onChange={(e) => inputHandler(e)} onBlur={(e) => errorHandler(e.target.name, e.target.value, "password")} />
@@ -172,7 +140,7 @@ const submitLogin = (e) => {
 
 
   )
-}
+}}
 
 
 export default Login;
