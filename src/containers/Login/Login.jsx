@@ -34,7 +34,8 @@ const [user, setUser] = useState({
 const [userError, setUserError] = useState({
   emailError: "",
   passwordError: "",
-  empty: ""
+  empty: "",
+  wrongCredentials: ""
 })
 
 let body = {
@@ -50,6 +51,14 @@ const submitLogin = (e) => {
   e.preventDefault();
   if(validateBody(body)){
     userLogin(body)
+      .then((created) => console.log(created))
+      .catch((error) => {
+        console.log(error.response.data)
+        setUserError((prevState) => ({
+          ...prevState,
+          wrongCredentials: error.response.data.message,
+        }));
+      });
   } else {
     setUserError((prevState) => ({
       ...prevState,
@@ -75,36 +84,46 @@ const errorHandler = (field, value, type, password) => {
 }
 
     return (
-      
-      <form className="container-fluid loginDesign d-flex justify-content-center align-items-center" onSubmit={(e) => submitLogin(e)}> 
-      
-      <div className="row">
+      <form
+        className="container-fluid loginDesign d-flex justify-content-center align-items-center"
+        onSubmit={(e) => submitLogin(e)}
+      >
+        <div className="row">
           <div className="col inputsBox text-center align-items-center">
-          <div>{userError.empty}</div>
+            <div>{userError.empty}</div>
+            <div>{userError.wrongCredentials}</div>
             <p>LOG IN </p>
 
-            <input className="inputDesign" type="email" name="email" placeholder="  Email ... |" onChange={(e) => inputHandler(e)} onBlur={(e) => errorHandler(e.target.name, e.target.value, "email")} />
+            <input
+              className="inputDesign"
+              type="email"
+              name="email"
+              placeholder="  Email ... |"
+              onChange={(e) => inputHandler(e)}
+              onBlur={(e) =>
+                errorHandler(e.target.name, e.target.value, "email")
+              }
+            />
             <div>{userError.emailError}</div>
-            <input className="inputDesign" type="password" name="password" placeholder="  Password ... |" onChange={(e) => inputHandler(e)} onBlur={(e) => errorHandler(e.target.name, e.target.value, "password")} />
+            <input
+              className="inputDesign"
+              type="password"
+              name="password"
+              placeholder="  Password ... |"
+              onChange={(e) => inputHandler(e)}
+              onBlur={(e) =>
+                errorHandler(e.target.name, e.target.value, "password")
+              }
+            />
             <div>{userError.passwordError}</div>
-            
 
             <div className="col text-center align-items-center">
-
-            <button className="buttonDesign">Log In</button>
-
+              <button className="buttonDesign">Log In</button>
             </div>
-
           </div>
         </div>
-       
-      
       </form>
-
-    
-      
-
-      )    
+    );    
   }
 
 
