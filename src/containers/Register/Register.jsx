@@ -50,6 +50,7 @@ const Register = () => {
 
   const registerUser = async (body) => {
     let res = await axios.post("http://localhost:3000/auth/register", body);
+    navigate("/")
   };
 
   //Handlers//
@@ -126,7 +127,7 @@ const Register = () => {
       <Image className="smileImage zoom" src={smile}></Image>
 
       <div className="row">
-        <div className="col text-center align-items-center inputsBox" id="">
+        <div className="col text-center align-items-center inputsBox">
           {/* <Image className="buttonsImage" src={buttons}></Image> */}
           
           <div>{userError.incompleteerror}</div>
