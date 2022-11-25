@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./Register.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Image from "react-bootstrap/Image"; //esto lo añado para poder importar una imagen
-import boca from "../../images/boca.png";
-import rayo from "../../images/rayo.png";
+import mouth from "../../assets/mouth.png";
+import ray from "../../assets/ray.png";
+import mouse from "../../assets/mouse.png"
+import smile from "../../assets/smile.png"
+// import buttons from "../../assets/buttons.png";
 import { userData } from "../User/userSlice";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -117,15 +120,21 @@ const Register = () => {
       onSubmit={submitHandler}
       className="container-fluid registerDesign d-flex justify-content-center align-items-center"
     >
-      <Image className="bocaImage zoom" src={boca}></Image>
-      <Image className="rayoImage zoom" src={rayo}></Image>
+      <Image className="bocaImage zoom" src={mouth}></Image>
+      <Image className="rayoImage zoom" src={ray}></Image>
+      <Image className="mouseImage zoom" src={mouse}></Image>
+      <Image className="smileImage zoom" src={smile}></Image>
 
       <div className="row">
-        <div className="col-12 inputsBox text-center align-items-center">
+        <div className="col text-center align-items-center" id="inputsBox">
+          {/* <Image className="buttonsImage" src={buttons}></Image> */}
+          
           <div>{userError.incompleteerror}</div>
           <div>{userError.emailAlreadyInBBDD}</div>
-
-          <p>REGISTER </p>
+          
+    
+          <h3 id="registerText">REGISTER </h3>
+          <hr id="line"></hr>
 
           <input
             onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}
@@ -200,7 +209,7 @@ const Register = () => {
           />
           <div className="errorInput">{userError.password2error}</div>
 
-          <div className="col text-center align-items-center">
+          <div className="col d-flex text-center align-items-center">
             <button className="buttonDesign">Register</button>
           </div>
         </div>

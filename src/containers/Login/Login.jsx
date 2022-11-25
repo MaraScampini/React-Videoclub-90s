@@ -6,6 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { errorCheck } from "../../services/usefull";
+import mouth from "../../assets/mouth.png";
+import ray from "../../assets/ray.png";
+import mouse from "../../assets/mouse.png"
+import smile from "../../assets/smile.png"
 
 
 
@@ -84,15 +88,22 @@ const errorHandler = (field, value, type, password) => {
 }
 
     return (
-      <form
-        className="container-fluid loginDesign d-flex justify-content-center align-items-center"
-        onSubmit={(e) => submitLogin(e)}
-      >
-        <div className="row">
-          <div className="col inputsBox text-center align-items-center">
-            <div>{userError.empty}</div>
-            <div>{userError.wrongCredentials}</div>
+      
+      <form 
+      onSubmit={(e) => submitLogin(e)}
+      className="container-fluid loginDesign d-flex justify-content-center align-items-center" 
+      > 
+      
+      {/* <Image className="bocaImage zoom" src={mouth}></Image>
+      <Image className="rayoImage zoom" src={ray}></Image>
+      <Image className="mouseImage zoom" src={mouse}></Image>
+      <Image className="smileImage zoom" src={smile}></Image> */}
+
+      <div className="row">
+          <div className="col text-center align-items-center" id="inputsBox">
+          <div>{userError.empty}</div>
             <p>LOG IN </p>
+            <hr id="line"></hr>
 
             <input
               className="inputDesign"
@@ -116,15 +127,43 @@ const errorHandler = (field, value, type, password) => {
               }
             />
             <div>{userError.passwordError}</div>
+            
 
-            <div className="col text-center align-items-center">
-              <button className="buttonDesign">Log In</button>
-            </div>
+<div className="col text-center align-items-center">
+
+  <button className="buttonDesign">Log In</button>
+
+
           </div>
-        </div>
+
+
+
+          </div>
+
+         
+
+          </div>
+
+        
+       
+      
       </form>
-    );    
-  }
+
+
+    
+
+    // <div className="container-fluid loginDesign d-flex justify-content-center align-items-center"> 
+
+
+
+
+    // </div>
+
+
+
+
+  )
+}
 
 
 export default Login;

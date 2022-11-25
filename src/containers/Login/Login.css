@@ -1,0 +1,91 @@
+
+.loginDesign{
+
+    background-color: #FFF7E2;
+    /* width: 100vw; */
+    height: 90vh;
+    
+}
+
+
+.inputDesign{
+    border-radius: 50px;
+    height: 2em;
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+    padding: 0 0 0 1em;
+}
+
+
+#inputsBox{
+    background-color: white;
+    height: 16em;
+    width: 24em;    
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0) 8px 8px;
+    border-radius: 15px;
+    border: 2px solid;
+}
+
+#line{
+    border:1px;
+    
+    background-color: black;
+    height: 2px;
+    width: 105%;
+    margin-top: 0;
+}
+
+.bocaImage{
+
+    position:absolute;
+    margin-left: 20em;
+    margin-top: 10em;
+    width: 200px;
+
+    transform: rotate(-10deg);
+    rotate: 10deg;
+}
+
+
+
+.rayoImage{
+
+    position:absolute;
+    margin-top: -5em;
+    margin-left: -20em;
+    width: 150px;
+    
+    transform: rotate(-10deg);
+    rotate: 10deg;
+}
+
+.mouseImage{
+
+    position:absolute;
+    margin-top: -10em;
+    margin-left: 15em;
+    width: 50px;
+    
+    transform: rotate(-10deg);
+    rotate: 10deg;
+}
+
+.smileImage{
+
+    position:absolute;
+    margin-top: 10em;
+    margin-left: -15em;
+    
+    /* width: 50px; */
+    
+    transform: rotate(-10deg);
+    rotate: 10deg;
+}
