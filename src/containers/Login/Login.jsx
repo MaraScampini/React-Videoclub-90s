@@ -63,12 +63,20 @@ const submitLogin = (e) => {
           wrongCredentials: error.response.data.message,
         }));
       });
-  } else {
+  }  else {
     setUserError((prevState) => ({
       ...prevState,
-      [e.target.name]: e.target.value
+      empty: "Check all fields are filled"
     }))
   }
+}
+
+const inputHandler = (e) => {
+  setUser((prevState) => ({
+    ...prevState,
+    [e.target.name] : e.target.value
+  }))
+}
 
   const errorHandler = (field, value, type, password) => {
     let error = "";
@@ -121,11 +129,7 @@ const submitLogin = (e) => {
               }
             />
             <div>{userError.passwordError}</div>
-            
-          <input className="inputDesign" type="email" name="email" placeholder="  Email ... |" onChange={(e) => inputHandler(e)} onBlur={(e) => errorHandler(e.target.name, e.target.value, "email")} />
-          <div>{userError.emailError}</div>
-          <input className="inputDesign" type="password" name="password" placeholder="  Password ... |" onChange={(e) => inputHandler(e)} onBlur={(e) => errorHandler(e.target.name, e.target.value, "password")} />
-          <div>{userError.passwordError}</div>
+          
 
 
           <div className="col text-center align-items-center">
@@ -140,7 +144,7 @@ const submitLogin = (e) => {
 
 
   )
-}}
+}
 
 
 export default Login;
