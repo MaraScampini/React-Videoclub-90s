@@ -120,13 +120,13 @@ const Register = () => {
       onSubmit={submitHandler}
       className="container-fluid registerDesign d-flex justify-content-center align-items-center"
     >
-      <Image className="bocaImage zoom" src={mouth}></Image>
-      <Image className="rayoImage zoom" src={ray}></Image>
+      <Image className="mouthImage zoom" src={mouth}></Image>
+      <Image className="rayImage zoom" src={ray}></Image>
       <Image className="mouseImage zoom" src={mouse}></Image>
       <Image className="smileImage zoom" src={smile}></Image>
 
       <div className="row">
-        <div className="col text-center align-items-center" id="inputsBox">
+        <div className="col text-center align-items-center inputsBox" id="">
           {/* <Image className="buttonsImage" src={buttons}></Image> */}
           
           <div>{userError.incompleteerror}</div>

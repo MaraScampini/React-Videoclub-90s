@@ -11,7 +11,7 @@
 .inputDesign{
     border-radius: 50px;
     height: 2em;
-    width: 25vw;
+    width: 20vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +43,7 @@
     margin-top: 0;
 }
 
-.bocaImage{
+.mouthImage{
 
     position:absolute;
     margin-left: 20em;
@@ -54,15 +54,12 @@
     rotate: 10deg;
 }
 
-
-
-.rayoImage{
+.rayImage{
 
     position:absolute;
     margin-top: -5em;
     margin-left: -20em;
-    width: 150px;
-    
+    width: 150px;    
     transform: rotate(-10deg);
     rotate: 10deg;
 }
@@ -88,4 +85,8 @@
     
     transform: rotate(-10deg);
     rotate: 10deg;
+}
+
+.loginText{
+    margin: 0.2em;
 }

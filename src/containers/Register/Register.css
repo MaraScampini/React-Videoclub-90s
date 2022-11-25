@@ -8,7 +8,7 @@
     
 }
 
-#inputsBox{
+.inputsBox{
     background-color: white;
     height: 30em;
     width: 24em;    
@@ -25,7 +25,7 @@
 
 #inputsBox::before{
 
-    content: url("../../assets/buttons2.png");
+    content: url("../../assets/buttons.png");
     display: flex;
     justify-content: flex-end;
     padding: 0.2em 0.5em 0 0;
@@ -65,7 +65,7 @@
     margin: 0.2em;
 }
 
-.bocaImage{
+.mouthImage{
 
     position:absolute;
     margin-left: 20em;
@@ -93,7 +93,7 @@
 
 }
 
-.rayoImage{
+.rayImage{
 
     position:absolute;
     margin-top: -5em;
@@ -118,7 +118,7 @@
 .smileImage{
 
     position:absolute;
-    margin-top: 10em;
+    margin-top: 50em;
     margin-left: -15em;
     
     /* width: 50px; */
