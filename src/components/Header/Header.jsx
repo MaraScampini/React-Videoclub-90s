@@ -18,6 +18,7 @@ const Header = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("jwt");
   let {decodedToken} = useJwt(token);
+  console.log(decodedToken)
   if (decodedToken === null) {
     decodedToken = { name: "" };
   }

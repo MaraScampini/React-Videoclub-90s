@@ -41,10 +41,19 @@ const Login = () => {
     empty: ""
   })
 
+<<<<<<< HEAD
   let body = {
     email: user.email,
     password: user.password
   }
+=======
+const [userError, setUserError] = useState({
+  emailError: "",
+  passwordError: "",
+  empty: "",
+  wrongCredentials: ""
+})
+>>>>>>> 47d61217b55ae102f687dfe12bef161598ecb5ea
 
   const validateBody = (body) => {
     if (body.email !== "" && body.password !== "") { return true }
@@ -62,8 +71,25 @@ const Login = () => {
     }
   }
 
+<<<<<<< HEAD
   const inputHandler = (e) => {
     setUser((prevState) => ({
+=======
+const submitLogin = (e) => {
+  e.preventDefault();
+  if(validateBody(body)){
+    userLogin(body)
+      .then((created) => console.log(created))
+      .catch((error) => {
+        console.log(error.response.data)
+        setUserError((prevState) => ({
+          ...prevState,
+          wrongCredentials: error.response.data.message,
+        }));
+      });
+  } else {
+    setUserError((prevState) => ({
+>>>>>>> 47d61217b55ae102f687dfe12bef161598ecb5ea
       ...prevState,
       [e.target.name]: e.target.value
     }))
@@ -94,9 +120,39 @@ const Login = () => {
         <div className="col text-center align-items-center" id="inputsBox">
 
           <div>{userError.empty}</div>
+<<<<<<< HEAD
 
           <h3 id="loginText">LOG IN </h3>
           <hr id="line"></hr>
+=======
+          <div>{userError.wrongCredentials}</div>
+            <p>LOG IN </p>
+            <hr id="line"></hr>
+
+            <input
+              className="inputDesign"
+              type="email"
+              name="email"
+              placeholder="  Email ... |"
+              onChange={(e) => inputHandler(e)}
+              onBlur={(e) =>
+                errorHandler(e.target.name, e.target.value, "email")
+              }
+            />
+            <div>{userError.emailError}</div>
+            <input
+              className="inputDesign"
+              type="password"
+              name="password"
+              placeholder="  Password ... |"
+              onChange={(e) => inputHandler(e)}
+              onBlur={(e) =>
+                errorHandler(e.target.name, e.target.value, "password")
+              }
+            />
+            <div>{userError.passwordError}</div>
+            
+>>>>>>> 47d61217b55ae102f687dfe12bef161598ecb5ea
 
           <input className="inputDesign" type="email" name="email" placeholder="  Email ... |" onChange={(e) => inputHandler(e)} onBlur={(e) => errorHandler(e.target.name, e.target.value, "email")} />
           <div>{userError.emailError}</div>
