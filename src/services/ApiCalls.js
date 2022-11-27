@@ -55,3 +55,18 @@ export const myLoans = async (token) => {
     console.error(error);
   }
 };
+
+export const returnLoan = async (body, token) => {
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+    const bodyParameters = {
+      id: body.id_movie,
+    };
+
+  try {
+    let res = await axios.patch(`${URL}/loans/end`, bodyParameters, config);
+  } catch (error) {
+    console.error(error)
+  }
+}

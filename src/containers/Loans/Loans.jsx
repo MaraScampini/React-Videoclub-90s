@@ -17,10 +17,9 @@ function Loans() {
     };
 
   useEffect(() => {
-    if (loans.length === 0) {
       myLoans(token).then((loans) => setLoans(loans));
-    }
-  });
+    
+  }, []);
 
   if (loans.length > 0) {
     return (
