@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const URL = "http://localhost:3000";
 
@@ -27,20 +28,6 @@ export const searchMovies = async (criteria) => {
   } catch (error) {}
 };
 
-export const loanMovie = async (body, token) => {
-  const config = {
-    headers: { Authorization: `Bearer ${token}` },
-  };
-  const bodyParameters = {
-    id: body.id_movie,
-  };
-  try {
-    let res = await axios.post(`${URL}/loans/movie`, bodyParameters, config);
-
-  } catch (error) {
-    console.error(error);
-  }
-};
 
 export const myLoans = async (token) => {
   const config = {
@@ -56,17 +43,4 @@ export const myLoans = async (token) => {
   }
 };
 
-export const returnLoan = async (body, token) => {
-  const config = {
-    headers: { Authorization: `Bearer ${token}` },
-  };
-    const bodyParameters = {
-      id: body.id_movie,
-    };
 
-  try {
-    let res = await axios.patch(`${URL}/loans/end`, bodyParameters, config);
-  } catch (error) {
-    console.error(error)
-  }
-}
