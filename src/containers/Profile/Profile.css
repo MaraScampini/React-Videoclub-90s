@@ -40,12 +40,10 @@
     box-shadow: rgba(0, 0, 0) 2px 3px;
     /* margin-right: 1.5em; */
     justify-content: space-evenly;
-
-
 }
 
 .userCard {
-    background-color: white;
+    background-color: rgb(254, 245, 245);
     height: 24em;
     width: 20em;
     box-shadow: rgba(0, 0, 0) 8px 8px;
@@ -60,8 +58,6 @@
     padding: 0.2em 0.5em 0 0;
     justify-content: flex-end;
     border-bottom: 2px solid black;
-
-
 }
 
 .userCardImage {
@@ -83,6 +79,14 @@
     justify-content: space-evenly;
 }
 
+.mouseImage {
+    margin-top: 0.5em;
+    width: 2em;
+}
+
+
+
+/* MEDIA QUERIES */
 
 @media(max-width: 500px) {
     .inputDesign {
@@ -94,8 +98,16 @@
     }
 }
 
-
-.mouseImage{
-    margin-top: 0.5em;
-    width: 2em;
+@media(max-width: 768px) {
+    .mouseImage {
+        display: none;
+    }
 }
+
+@media(max-width: 768px) {
+    .mouseImage {
+        display: none;
+    }
+}
+
+

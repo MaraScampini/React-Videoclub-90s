@@ -3,13 +3,13 @@
 .registerDesign{
 
     background-color: #FFF7E2;
-    /* width: 100vw; */
+    width: 200vw;
     height: 90vh;
     
 }
 
 .inputsBox{
-    background-color: white;
+    background-color: rgb(254, 245, 245);
     height: 32em;
     width: 24em;    
 
@@ -61,7 +61,12 @@
 
 .buttonDesign:hover{
     box-shadow: none;
+    cursor: pointer;
+    transition: 0.15s linear;
+
+
 }
+
 
 #registerText{
     margin: 0.2em;
@@ -134,9 +139,19 @@
 .mouthImage, .rayImage, .mouseImage, .smileImage{
     display: none;
 }
+
 }
 
 .zoom:hover{
     transform: scale(1.7);
     transition: .7s;
+}
+
+
+@media(max-width: 500px){
+
+    .inputsBox{
+        width: 25vw;
+    }
+
 }

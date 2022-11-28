@@ -13,7 +13,7 @@
 .inputtDesign{
     border-radius: 50px;
     height: 2em;
-    width: 27vw;
+    width: 20vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,8 +23,8 @@
 
 
 #inputsBox{
-    background-color: white;
-    height: 16em;
+    background-color: rgb(254, 245, 245);
+    height: 18em;
     width: 24em;    
 
     display: flex;
@@ -48,6 +48,8 @@
     border-bottom: 2px solid black;
 
 }
+
+
 
 
 .mouthImage{
@@ -112,4 +114,4 @@
         width: 15em;
     }
 }
-    
+

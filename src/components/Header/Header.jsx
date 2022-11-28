@@ -8,6 +8,7 @@ import { searchMovies } from "../../services/ApiCalls";
 import { useJwt } from "react-jwt";
 import Image from "react-bootstrap/Image";
 import logo from "../../assets/logo.png"
+import userLogo from "../../assets/userLogo.png"
 
 
 import "./Header.css";
@@ -57,7 +58,7 @@ const Header = () => {
     return (
       <Navbar collapseOnSelect expand="lg" className="headerDesign">
         <Container>
-          <Navbar.Brand onClick={() => navigate("/")}>SUPER-8</Navbar.Brand>
+          <Navbar.Brand onClick={() => navigate("/")}><Image className="logoImage zoomLogo" src={logo}></Image></Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav" className="m-auto">
             <Nav
@@ -98,7 +99,12 @@ const Header = () => {
               onClick={() => navigate("/profile")}
               className="fw-bold mx-auto mt-1 mb-md-1 text-center"
             >
-              Hi, {decodedToken.name}!
+              <div>
+              <Image className="userLogo" src={userLogo}></Image>
+              
+              Hi, {decodedToken.name}! 
+              </div>
+             
             </Nav>
             <Nav
               onClick={() => logout()}
@@ -114,7 +120,7 @@ const Header = () => {
     return (
       <Navbar collapseOnSelect expand="lg" className="headerDesign">
         <Container>
-          <Navbar.Brand onClick={() => navigate("/")}><Image className="logoImage zoom" src={logo}></Image></Navbar.Brand>
+          <Navbar.Brand onClick={() => navigate("/")}><Image className="logoImage zoomLogo" src={logo}></Image></Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav" className="m-auto">
             <Nav

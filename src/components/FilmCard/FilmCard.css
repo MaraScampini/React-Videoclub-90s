@@ -9,11 +9,12 @@
 
   border: 2px solid black;
   border-radius: 1em;
-  background-color: rgb(255, 254, 245);
+  background-color: rgb(239, 239, 239);
 
   box-shadow: rgba(0, 0, 0) 3px 4px;
 
   transition: 0.15s linear;
+  
 }
 
 .imageDesign{
@@ -41,4 +42,6 @@
 .cardDesign:hover {
   box-shadow: none;
   cursor: pointer;
+  transform: scale(1.05);
+
 }

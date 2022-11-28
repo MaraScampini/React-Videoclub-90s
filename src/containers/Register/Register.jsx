@@ -133,7 +133,7 @@ const Register = () => {
       <Image className="smileImage zoom" src={smile}></Image>
 
       <div className="row">
-        <div className="col-md-12 text-center align-items-center inputsBox">
+        <div className="col text-center align-items-center inputsBox">
           {/* <Image className="buttonsImage" src={buttons}></Image> */}
           
           <div>{userError.incompleteerror}</div>
