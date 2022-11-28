@@ -127,7 +127,7 @@ const Register = () => {
       <Image className="smileImage zoom" src={smile}></Image>
 
       <div className="row">
-        <div className="col text-center align-items-center inputsBox">
+        <div className="col-md-12 text-center align-items-center inputsBox">
           {/* <Image className="buttonsImage" src={buttons}></Image> */}
           
           <div>{userError.incompleteerror}</div>
@@ -135,7 +135,7 @@ const Register = () => {
           
     
           <h3 id="registerText">REGISTER </h3>
-          <hr id="line"></hr>
+          <br></br>
 
           <input
             onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}

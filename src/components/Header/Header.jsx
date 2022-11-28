@@ -6,6 +6,8 @@ import { addSearch, filmData, addCriteria } from "../Films/filmSlice";
 import { logout, login, userData } from "../../containers/User/userSlice";
 import { searchMovies } from "../../services/ApiCalls";
 import { useJwt } from "react-jwt";
+import Image from "react-bootstrap/Image";
+import logo from "../../assets/logo.png"
 
 
 import "./Header.css";
@@ -118,7 +120,7 @@ const Header = () => {
     return (
       <Navbar collapseOnSelect expand="lg" className="headerDesign">
         <Container>
-          <Navbar.Brand onClick={() => navigate("/")}>SUPER-8</Navbar.Brand>
+          <Navbar.Brand onClick={() => navigate("/")}><Image className="logoImage zoom" src={logo}></Image></Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav" className="m-auto">
             <Nav

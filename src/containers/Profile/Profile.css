@@ -1,31 +1,27 @@
-/* .profileDesign{
-
-    
-} */
-
-.editData{
- background-color: #BCD8E6;
- width: 30vw;
- height: 90vh;
- border-right: 1px black solid;
+.editData {
+    background-color: #BCD8E6;
+    width: 30vw;
+    height: 90vh;
+    border-right: 1px black solid;
 }
 
 
-.editTarget{
-    background-color: #FFF7E2 ;
-    
+.editTarget {
+    background-color: #FFF7E2;
+    background-image: url(../../assets/pattern1.png);
+    background-size: 25em;
 
 }
 
 
-.infoContainer{
-    
+.infoContainer {
+
     width: 25em;
     height: 20em;
-   
+
 }
 
-.inputDesign{
+.inputDesign {
     border-radius: 50px;
     height: 2em;
     width: 30vw;
@@ -33,19 +29,22 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 1em;
-    
+
 }
 
-.buttonDesign{
+.buttonDesign {
     background-color: white;
     height: 5vh;
     width: 20vh;
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0) 2px 3px;
-    
+    /* margin-right: 1.5em; */
+    justify-content: space-evenly;
+
+
 }
 
-.userCard{
+.userCard {
     background-color: white;
     height: 24em;
     width: 20em;
@@ -55,23 +54,48 @@
     z-index: 1;
 }
 
-.userCard::before{
+.userCard::before {
     content: url("../../assets/buttons.png");
     display: flex;
     padding: 0.2em 0.5em 0 0;
     justify-content: flex-end;
-    margin-bottom: 1px solid black;
+    border-bottom: 2px solid black;
+
 
 }
 
-.userCardImage{
+.userCardImage {
     border-radius: 100px;
     width: 150px;
+    border: solid 2px;
 }
 
 
-.pattern1{
+.pattern1 {
     z-index: 2;
     width: 20em;
-    
+
+}
+
+.buttonsDiv {
+    padding: 1em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+@media(max-width: 500px) {
+    .inputDesign {
+        width: 15em;
+    }
+
+    .userCard {
+        margin: 2em;
+    }
+}
+
+
+.mouseImage{
+    margin-top: 0.5em;
+    width: 2em;
 }

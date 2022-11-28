@@ -1,33 +1,43 @@
 import React, { useState, useEffect } from "react";
 import "./Profile.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import { useDispatch } from "react-redux";
 // import axios from "axios";
 // import { errorCheck } from "../../services/usefull";
 import Image from "react-bootstrap/Image"; //esto lo añado para poder importar una imagen
 import userCard from "../../assets/userCardImage.png";
 import pattern1 from "../../assets/pattern1.png";
+import mouse from "../../assets/mouse.png"
+
+//ESTO LO IMPORTO PARA PODER USAR EL NOMBRE DEL TOKEN
+import { useJwt } from "react-jwt";
+// // let {decodedToken} = useJwt(token);
+// if (decodedToken === null) {
+//     decodedToken = { name: "" };
+//   }
 
 
 
 
 const Profile = () => {
 
+    const navigate = useNavigate();
+
     return (
+
         <form
             className="container-fluid profileDesign "
         >
             <div className="row ">
-
                 <div className="col editData d-flex justify-content-center align-items-center">
-
                     <div className="infoContainer-fluid text-center justify-content-center align-items-center">
+                    
+                    <Image className="mouseImage zoom" src={mouse}></Image>
 
 
                         <h3>Edit your user data.</h3>
                         <br />
-
 
                         <input
                             className="inputDesign"
@@ -82,7 +92,7 @@ const Profile = () => {
                         // }
                         />
 
-                        <div className="container-fluid p-2">
+                        <div className="container-fluid buttonsDiv">
                             <button className="buttonDesign">Update</button>
                             <button className="buttonDesign">Back</button>
 
@@ -91,33 +101,19 @@ const Profile = () => {
                 </div>
 
 
-
                 <div className="col editTarget d-flex justify-content-center align-items-center">
 
-                {/* <Image className="pattern1" src={pattern1}></Image> */}
                     <div className="userCard text-center justify-content-center align-items-center">
-                        
-                        <p>User Card</p>
-                        <Image className="userCardImage" src={userCard}></Image>
-                        
 
+                        {/* {decodedToken.name} */}
+                        <h4>Name User</h4>
+                        <Image className="userCardImage" src={userCard}></Image>
 
 
                     </div>
-
-
                 </div>
-
-
-
             </div>
-
-
-
             <div></div>
-
-
-
 
         </form>
     )

@@ -62,3 +62,12 @@
     border: none;
     background-color: transparent;
 }
+
+.logoImage{
+  width: 7.5em;
+}
+
+.zoom:hover{
+    transform: scale(1.7);
+    transition: .7s;
+}

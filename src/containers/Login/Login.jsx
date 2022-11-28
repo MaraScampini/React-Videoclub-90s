@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { errorCheck } from "../../services/usefull";
+import Image from "react-bootstrap/Image"; //esto lo añado para poder importar una imagen
 import mouth from "../../assets/mouth.png";
 import ray from "../../assets/ray.png";
 import mouse from "../../assets/mouse.png"
@@ -94,21 +95,21 @@ const inputHandler = (e) => {
       className="container-fluid loginDesign d-flex justify-content-center align-items-center"
     >
 
-      {/* <Image className="mouthImage zoom" src={mouth}></Image> */}
-      {/* <Image className="rayImage zoom" src={ray}></Image> */}
-      {/* <Image className="mouseImage zoom" src={mouse}></Image> */}
-      {/* <Image className="smileImage zoom" src={smile}></Image> */}
+      <Image className="mouthImage zoom" src={mouth}></Image>
+      <Image className="rayImage zoom" src={ray}></Image>
+      <Image className="mouseImage zoom" src={mouse}></Image>
+      <Image className="smileImage zoom" src={smile}></Image>
 
       <div className="row">
         <div className="col text-center align-items-center" id="inputsBox">
 
           <div>{userError.empty}</div>
           <div>{userError.wrongCredentials}</div>
-            <p>LOG IN </p>
-            <hr id="line"></hr>
+            <h3 className="loginText">LOG IN </h3>
+            <br />
 
             <input
-              className="inputDesign"
+              className="inputtDesign"
               type="email"
               name="email"
               placeholder="  Email ... |"
@@ -119,7 +120,7 @@ const inputHandler = (e) => {
             />
             <div>{userError.emailError}</div>
             <input
-              className="inputDesign"
+              className="inputtDesign"
               type="password"
               name="password"
               placeholder="  Password ... |"
