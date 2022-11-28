@@ -12,6 +12,8 @@
   background-color: rgb(255, 254, 245);
 
   box-shadow: rgba(0, 0, 0) 3px 4px;
+
+  transition: 0.15s linear;
 }
 
 .imageDesign{
@@ -34,4 +36,9 @@
   height: 4vh;
   width: 100%;
   border-bottom: 1px solid black;
+}
+
+.cardDesign:hover {
+  box-shadow: none;
+  cursor: pointer;
 }

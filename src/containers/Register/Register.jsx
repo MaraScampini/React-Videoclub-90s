@@ -80,10 +80,16 @@ const Register = () => {
       }));
       registerUser(body)
       .then((created) => console.log(created))
-      .catch((error) => {setUserError((prevState) => ({
-        ...prevState,
-        emailAlreadyInBBDD: error.response.data,
-      }))});
+      .catch((error) => {setUserError(
+        (prevState) => (
+          console.log(error),
+          {
+            ...prevState,
+            emailAlreadyInBBDD: error.response.data,
+          }
+        )
+      );});
+      
     } else {
       setUserError((prevState) => ({
         ...prevState,

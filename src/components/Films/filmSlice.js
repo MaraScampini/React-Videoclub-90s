@@ -6,6 +6,7 @@ export const filmSlice = createSlice({
     details: {},
     query: "",
     search: [],
+    loans: []
   },
   reducers: {
     addFilm: (state, action) => {
@@ -26,6 +27,12 @@ export const filmSlice = createSlice({
         query: action.payload,
       };
     },
+    addLoans: (state, action) => {
+      return {
+        ...state,
+        loans: action.payload
+      }
+    }
   },
 });
 

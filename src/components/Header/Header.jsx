@@ -101,12 +101,6 @@ const Header = () => {
               Hi, {decodedToken.name}!
             </Nav>
             <Nav
-              onClick={() => navigate("/loans")}
-              className="fw-bold mx-auto mt-1 mb-md-1 text-center"
-            >
-              Loans
-            </Nav>
-            <Nav
               onClick={() => logout()}
               className="fw-bold mx-auto mt-1 mb-md-1 text-center"
             >
