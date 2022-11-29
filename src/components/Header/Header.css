@@ -1,6 +1,7 @@
 .headerDesign {
   background-color: #ffe083;
   border-bottom: 1px solid black;
+  min-height: 10vh;
 }
 
 .navbarCollapsed {
@@ -14,6 +15,10 @@
     .navbarCollapsed{
         flex-direction: column;
     }
+}
+
+#navbarMierda{
+  height: 10vh;
 }
 
 #navbar {
