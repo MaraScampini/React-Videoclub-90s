@@ -140,8 +140,7 @@ const Register = () => {
           <div>{userError.emailAlreadyInBBDD}</div>
           
     
-          <h3 id="registerText">REGISTER </h3>
-          <br></br>
+          <div id="registerText">REGISTER </div>
 
           <input
             onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}
