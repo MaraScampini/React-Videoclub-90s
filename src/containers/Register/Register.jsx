@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { errorCheck } from "../../services/usefull";
 import axios from "axios";
 import { useJwt } from "react-jwt";
+import { Col, Container, Row } from "react-bootstrap";
 
 
 const Register = () => {
@@ -127,99 +128,113 @@ const Register = () => {
       onSubmit={submitHandler}
       className="container-fluid registerDesign d-flex justify-content-center align-items-center"
     >
-      <Image className="mouthImage zoom" src={mouth}></Image>
-      <Image className="rayImage zoom" src={ray}></Image>
-      <Image className="mouseImage zoom" src={mouse}></Image>
-      <Image className="smileImage zoom" src={smile}></Image>
+      <Container>
+        <Row className="row d-flex justify-content-center">
+          <Col className="col-md-4 imagesReg">
+            <Image className="rayImageReg zoom" src={ray}></Image>
+            <Image className="smileImageReg zoom" src={smile}></Image>
+          </Col>
+          <Col className="col-10 col-md-4 text-center align-items-center inputsBox">
+            {/* <Image className="buttonsImage" src={buttons}></Image> */}
 
-      <div className="row">
-        <div className="col text-center align-items-center inputsBox">
-          {/* <Image className="buttonsImage" src={buttons}></Image> */}
-          
-          <div>{userError.incompleteerror}</div>
-          <div>{userError.emailAlreadyInBBDD}</div>
-          
-    
-          <div id="registerText">REGISTER </div>
+            <div>{userError.incompleteerror}</div>
+            <div>{userError.emailAlreadyInBBDD}</div>
 
-          <input
-            onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}
-            onChange={inputHandler}
-            className="inputRegDesign"
-            type="text"
-            placeholder="  User name ... |"
-            name="username"
-          />
-          <div className="errorInput">{userError.usernameerror}</div>
-          <input
-            onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}
-            onChange={inputHandler}
-            className="inputRegDesign"
-            type="text"
-            placeholder="  Name ... |"
-            name="name"
-          />
-          <div className="errorInput">{userError.nameerror}</div>
-          <input
-            onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}
-            onChange={inputHandler}
-            className="inputRegDesign"
-            type="text"
-            placeholder="  Address ... |"
-            name="address"
-          />
-          <div className="errorInput">{userError.addresserror}</div>
-          <input
-            onBlur={(e) => errorHandler(e.target.name, e.target.value, "text")}
-            onChange={inputHandler}
-            className="inputRegDesign"
-            type="text"
-            placeholder="  City ... |"
-            name="city"
-          />
-          <div className="errorInput">{userError.cityerror}</div>
-          <input
-            onBlur={(e) => errorHandler(e.target.name, e.target.value, "email")}
-            onChange={inputHandler}
-            className="inputRegDesign"
-            type="Email"
-            placeholder="  Email ... | "
-            name="email"
-          />
-          <div className="errorInput">{userError.emailerror}</div>
-          <input
-            onBlur={(e) =>
-              errorHandler(e.target.name, e.target.value, "password")
-            }
-            onChange={inputHandler}
-            className="inputRegDesign"
-            type="Password"
-            placeholder="  Password ... |"
-            name="password"
-          />
-          <div className="errorInput">{userError.passworderror}</div>
-          <input
-            onBlur={(e) =>
-              errorHandler(
-                e.target.name,
-                e.target.value,
-                "password2",
-                user.password
-              )
-            }
-            onChange={inputHandler}
-            className="inputRegDesign"
-            type="Password"
-            placeholder="  Repeat password ... |"
-            name="password2"
-          />
-          <div className="errorInput">{userError.password2error}</div>
+            <div id="registerText">REGISTER </div>
 
-          <div className="col d-flex text-center align-items-center">
-            <button className="buttonDesign">Register</button>
-          </div>
-        </div>
-      </div>
+            <input
+              onBlur={(e) =>
+                errorHandler(e.target.name, e.target.value, "text")
+              }
+              onChange={inputHandler}
+              className="inputRegDesign"
+              type="text"
+              placeholder="  User name ... |"
+              name="username"
+            />
+            <div className="errorInput">{userError.usernameerror}</div>
+            <input
+              onBlur={(e) =>
+                errorHandler(e.target.name, e.target.value, "text")
+              }
+              onChange={inputHandler}
+              className="inputRegDesign"
+              type="text"
+              placeholder="  Name ... |"
+              name="name"
+            />
+            <div className="errorInput">{userError.nameerror}</div>
+            <input
+              onBlur={(e) =>
+                errorHandler(e.target.name, e.target.value, "text")
+              }
+              onChange={inputHandler}
+              className="inputRegDesign"
+              type="text"
+              placeholder="  Address ... |"
+              name="address"
+            />
+            <div className="errorInput">{userError.addresserror}</div>
+            <input
+              onBlur={(e) =>
+                errorHandler(e.target.name, e.target.value, "text")
+              }
+              onChange={inputHandler}
+              className="inputRegDesign"
+              type="text"
+              placeholder="  City ... |"
+              name="city"
+            />
+            <div className="errorInput">{userError.cityerror}</div>
+            <input
+              onBlur={(e) =>
+                errorHandler(e.target.name, e.target.value, "email")
+              }
+              onChange={inputHandler}
+              className="inputRegDesign"
+              type="Email"
+              placeholder="  Email ... | "
+              name="email"
+            />
+            <div className="errorInput">{userError.emailerror}</div>
+            <input
+              onBlur={(e) =>
+                errorHandler(e.target.name, e.target.value, "password")
+              }
+              onChange={inputHandler}
+              className="inputRegDesign"
+              type="Password"
+              placeholder="  Password ... |"
+              name="password"
+            />
+            <div className="errorInput">{userError.passworderror}</div>
+            <input
+              onBlur={(e) =>
+                errorHandler(
+                  e.target.name,
+                  e.target.value,
+                  "password2",
+                  user.password
+                )
+              }
+              onChange={inputHandler}
+              className="inputRegDesign"
+              type="Password"
+              placeholder="  Repeat password ... |"
+              name="password2"
+            />
+            <div className="errorInput">{userError.password2error}</div>
+
+            <div className="col d-flex text-center align-items-center">
+              <button className="buttonDesign">Register</button>
+            </div>
+          </Col>
+          <Col className="col-md-4 imagesReg">
+            <Image className="mouthImageReg zoom" src={mouth}></Image>
+            <Image className="mouseImageReg zoom" src={mouse}></Image>
+          </Col>
+        </Row>
+      </Container>
     </form>
   );
 };

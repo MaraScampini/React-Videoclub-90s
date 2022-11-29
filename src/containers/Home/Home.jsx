@@ -24,6 +24,7 @@ const Home = () => {
   };
 
   const searchedFilm = useSelector(filmData);
+  console.log(searchedFilm);
   const films = searchedFilm.search;
   const query = searchedFilm.query;
 
