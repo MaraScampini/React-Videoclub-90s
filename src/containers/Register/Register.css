@@ -14,9 +14,10 @@
     width: 24em;    
 
     display: flex;
+    gap: 0.5em;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
     box-shadow: rgba(0, 0, 0) 8px 8px;
     border-radius: 15px;
     border: 2px solid;
@@ -45,11 +46,11 @@
 .inputRegDesign{
     border-radius: 50px;
     height: 2em;
-    width: 25vw;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1em;
+    /* margin-bottom: 1em; */
     padding: 0 0 0 1em;
 }
 
@@ -74,17 +75,20 @@
 
 }
 
-
-#registerText{
-    margin: 0.2em;
+.imagesReg{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
 }
 
-.mouthImage{
+
+.mouthImageReg{
 
     position:absolute;
-    margin-left: 20em;
-    margin-top: 10em;
-    width: 200px;
+    margin-top: 20em;
+    width: 10em;
 
     transform: rotate(-10deg);
     rotate: 10deg;
@@ -92,7 +96,6 @@
 
 .buttonsImage{
     width: 70px;
-    /* align-self: left; */
     position: absolute;
      
 }
@@ -107,33 +110,32 @@
 
 }
 
-.rayImage{
+.rayImageReg{
 
     position:absolute;
-    margin-top: -5em;
-    margin-left: -20em;
-    width: 150px;
+    margin-top: 3em;
+    width: 7em;
     
     transform: rotate(-10deg);
     rotate: 10deg;
 }
 
-.mouseImage{
+.mouseImageReg{
 
     position:absolute;
-    margin-top: -10em;
-    margin-left: 15em;
-    width: 50px;
+    margin-top: 5em;
+    margin-left: 3em;
+    width: 3em;
     
     transform: rotate(-10deg);
     rotate: 10deg;
 }
 
-.smileImage{
+.smileImageReg{
 
     position:absolute;
-    margin-top: 50em;
-    margin-left: -15em;
+    margin-top: 20em;
+    margin-left: -5em;
     
     /* width: 50px; */
     
@@ -143,7 +145,7 @@
 
 
 @media(max-width: 768px){
-.mouthImage, .rayImage, .mouseImage, .smileImage{
+.imagesReg{
     display: none;
 }
 
