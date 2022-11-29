@@ -8,116 +8,143 @@ import { useNavigate } from "react-router-dom";
 import Image from "react-bootstrap/Image"; //esto lo añado para poder importar una imagen
 import userCard from "../../assets/userCardImage.png";
 import pattern1 from "../../assets/pattern1.png";
-import mouse from "../../assets/mouse.png"
+import mouse from "../../assets/mouse.png";
 
 //ESTO LO IMPORTO PARA PODER USAR EL NOMBRE DEL TOKEN
 import { useJwt } from "react-jwt";
-// // let {decodedToken} = useJwt(token);
-// if (decodedToken === null) {
-//     decodedToken = { name: "" };
-//   }
-
-
-
+import { Col, Container, Row } from "react-bootstrap";
+import { editUser } from "../../services/ApiCalls";
 
 const Profile = () => {
+  const navigate = useNavigate();
+  const token = localStorage.getItem("jwt");
+    let { decodedToken } = useJwt(token);
+  if (decodedToken === null) {
+    decodedToken = { name: "" };
+  }
 
-    const navigate = useNavigate();
+  const [user, setUser] = useState({
+    username: "",
+    password: "",
+    password2: "",
+  });
 
+//   useEffect(()=>{
+//     setUser
+//   })
+
+  const [userError, setUserError] = useState({
+    usernameerror: "",
+    passworderror: "",
+    password2error: "",
+    incompleteerror: "",
+  });
+
+  const validateBody = (body) => {
+    if (body.username !== "" && body.password !== "" && body.password2 !== "") {
+      return true;
+    }
+  };
+
+
+
+  const inputHandler = (e) => {
+    setUser((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const errorHandler = (field, value, type, password1) => {
+    let error = "";
+    error = errorCheck(value, type, password1);
+    setUserError((prevState) => ({
+      ...prevState,
+      [field + "error"]: error,
+    }));
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    if (validateBody(body)) {
+      setUserError((prevState) => ({
+        ...prevState,
+        incompleteerror: "",
+      }));
+      editUser(body, token)
+      .then(localStorage.removeItem("jwt"))
+      .then(navigate("/login"));
+    } else {
+      setUserError((prevState) => ({
+        ...prevState,
+        incompleteerror: "Complete every field",
+      }));
+    }
+  };
+
+  const body = {
+    username: user.username,
+    password: user.password,
+  };
+
+  if (token) {
     return (
+      <Container className="container-fluid">
+        <Row className="row rowDesign">
+          <Col className="col col-sm-6 editData d-flex justify-content-center align-items-center">
+            <form onSubmit={submitHandler} className="">
+              <div className=" text-center justify-content-center align-items-center">
+                <Image className="mouseImage zoom" src={mouse}></Image>
 
-        <form
-            className="container-fluid profileDesign "
-        >
-            <div className="row ">
-                <div className="col editData d-flex justify-content-center align-items-center">
-                    <div className="infoContainer-fluid text-center justify-content-center align-items-center">
-                    
-                    <Image className="mouseImage zoom" src={mouse}></Image>
+                <h3>Edit your user data.</h3>
+                <div>{userError.incompleteerror}</div>
 
+                <input
+                  className="inputDesign"
+                  type="text"
+                  name="username"
+                  value={user.username}
+                  onChange={inputHandler}
+                />
 
-                        <h3>Edit your user data.</h3>
-                        <br />
+                <input
+                  className="inputDesign"
+                  type="Password"
+                  name="password"
+                  placeholder="  New password ... |"
+                  onChange={inputHandler}
+                />
+                <input
+                  className="inputDesign"
+                  type="Password"
+                  name="password2"
+                  placeholder="  Repeat password ... |"
+                  onChange={inputHandler}
+                />
 
-                        <input
-                            className="inputDesign"
-                            type="text"
-                            name="username"
-                            placeholder="  New user name ... |"
-                        // onChange={(e) => inputHandler(e)}
-                        // onBlur={(e) =>
-                        //     errorHandler(e.target.name, e.target.value, "email")
-                        // }
-                        />
-
-                        {/* <input
-                            className="inputDesign"
-                            type="text"
-                            name="city"
-                            placeholder="  City ... |"
-                            onChange={(e) => inputHandler(e)}
-                            onBlur={(e) =>
-                                errorHandler(e.target.name, e.target.value, "email")
-                            }
-                        /> */}
-
-                        <input
-                            className="inputDesign"
-                            type="Email"
-                            name="email"
-                            placeholder="  New email ... |"
-                        // onChange={(e) => inputHandler(e)}
-                        // onBlur={(e) =>
-                        //     errorHandler(e.target.name, e.target.value, "email")
-                        // }
-                        />
-                        <input
-                            className="inputDesign"
-                            type="Password"
-                            name="password"
-                            placeholder="  New password ... |"
-                        // onChange={(e) => inputHandler(e)}
-                        // onBlur={(e) =>
-                        //     errorHandler(e.target.name, e.target.value, "email")
-                        // }
-                        />
-                        <input
-                            className="inputDesign"
-                            type="Passwords"
-                            name="passwords"
-                            placeholder="  Repeat password ... |"
-                        // onChange={(e) => inputHandler(e)}
-                        // onBlur={(e) =>
-                        //     errorHandler(e.target.name, e.target.value, "email")
-                        // }
-                        />
-
-                        <div className="container-fluid buttonsDiv">
-                            <button className="buttonDesign">Update</button>
-                            <button className="buttonDesign">Back</button>
-
-                        </div>
-                    </div>
+                <div className="container-fluid buttonsDiv">
+                  <button className="buttonDesign">Update</button>
+                  <button className="buttonDesign">Back</button>
                 </div>
-
-
-                <div className="col editTarget d-flex justify-content-center align-items-center">
-
-                    <div className="userCard text-center justify-content-center align-items-center">
-
-                        {/* {decodedToken.name} */}
-                        <h4>Name User</h4>
-                        <Image className="userCardImage" src={userCard}></Image>
-
-
-                    </div>
-                </div>
+              </div>
+            </form>
+          </Col>
+          <Col className="col-12 col-sm-6 editTarget d-flex justify-content-center align-items-center">
+            <div className="userCard text-center justify-content-center align-items-center">
+              <h4>{decodedToken.username}</h4>
+              <Image className="userCardImage" src={userCard}></Image>
+              <div>{decodedToken.name}</div>
+              <div>{decodedToken.email}</div>
+              <div>{decodedToken.address}</div>
+              <div>{decodedToken.city}</div>
             </div>
-            <div></div>
-
-        </form>
-    )
-}
-
+          </Col>
+        </Row>
+      </Container>
+    );
+  } else {
+    navigate("/");
+  }
+};
 
 export default Profile;

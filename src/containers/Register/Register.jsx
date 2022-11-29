@@ -117,7 +117,8 @@ const Register = () => {
       body.city !== "" &&
       body.email !== "" &&
       body.password !== "" &&
-      body.password2 !== ""
+      body.password2 !== "" &&
+      body.password === body.password2
     ) {
       return true;
     }

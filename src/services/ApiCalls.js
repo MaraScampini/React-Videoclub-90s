@@ -28,19 +28,34 @@ export const searchMovies = async (criteria) => {
   } catch (error) {}
 };
 
-
 export const myLoans = async (token) => {
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
   try {
     let res = await axios.get(`${URL}/loans/myloans`, config);
-        console.log(res);
+    console.log(res);
 
-    return res.data.resp
+    return res.data.resp;
   } catch (error) {
     console.error(error);
   }
 };
 
-
+export const editUser = async (body, token) => {
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+  console.log(token)
+  console.log(body)
+  const bodyParameters = {
+    username: body.username,
+    password: body.password,
+  };
+  try {
+    let res = await axios.patch(`${URL}/users/edit`, bodyParameters, config);
+    return res.data.resp;
+  } catch (error) {
+    console.error(error);
+  }
+};
