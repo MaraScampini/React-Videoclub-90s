@@ -8,18 +8,20 @@
 }
 
 #rowDesign{
-  max-height: 50vh;
+  /* max-height: 100vh; */
+  background-color: #ffe083;
+  /* height: 88.5vh; */
 }
+
 
 
 #cardDesignDetail {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
+  height: fit-content;
   padding: 0;
 
-  margin-top: 2rem;
   border: 2px solid black;
   border-radius: 1rem;
   background-color: rgb(255, 254, 245);
@@ -51,7 +53,7 @@
   background-color: #bcd8e6;
   width: 100%;
   margin: 1rem 0;
-padding: 1rem;
+  padding: 1rem;
   border-radius: 1em;
   border: 1px solid black;
 }
@@ -98,7 +100,13 @@ padding: 1rem;
   box-shadow: rgba(0, 0, 0) 2px 3px;
 }
 
+
 .buttonDetail:hover{
   cursor: pointer;
   box-shadow: none;
+}
+
+
+.principalDiv{
+  height: 80vh;
 }

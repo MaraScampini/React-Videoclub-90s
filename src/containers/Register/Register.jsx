@@ -135,7 +135,6 @@ const Register = () => {
             <Image className="smileImageReg zoom" src={smile}></Image>
           </Col>
           <Col className="col-10 col-md-4 text-center align-items-center inputsBox">
-            {/* <Image className="buttonsImage" src={buttons}></Image> */}
 
             <div>{userError.incompleteerror}</div>
             <div>{userError.emailAlreadyInBBDD}</div>
@@ -229,10 +228,12 @@ const Register = () => {
               <button className="buttonDesign">Register</button>
             </div>
           </Col>
+
           <Col className="col-md-4 imagesReg">
             <Image className="mouthImageReg zoom" src={mouth}></Image>
             <Image className="mouseImageReg zoom" src={mouse}></Image>
           </Col>
+          
         </Row>
       </Container>
     </form>
