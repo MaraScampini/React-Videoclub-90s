@@ -1,7 +1,15 @@
+.rowDesign {
+    width: 100vw;
+}
+
+.container-fluid{
+    margin: 0;
+}
+
 .editData {
     background-color: #BCD8E6;
-    width: 30vw;
-    height: 90vh;
+    /* width: 30vw; */
+    height: 89.5vh;
     border-right: 1px black solid;
 }
 
@@ -16,7 +24,7 @@
 
 .infoContainer {
 
-    width: 25em;
+    /* width: 25em; */
     height: 20em;
 
 }
@@ -24,7 +32,7 @@
 .inputDesign {
     border-radius: 50px;
     height: 2em;
-    width: 30vw;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,7 +69,7 @@
 }
 
 .userCardImage {
-    border-radius: 100px;
+    border-radius: 100%;
     width: 150px;
     border: solid 2px;
 }
