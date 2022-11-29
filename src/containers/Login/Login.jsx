@@ -101,7 +101,7 @@ const inputHandler = (e) => {
       <Image className="smileImage zoom" src={smile}></Image>
 
       <div className="row">
-        <div className="col text-center align-items-center" id="inputsBox">
+        <div className="col d-flex justify-content-around text-center align-items-center" id="inputsBox">
 
           <div>{userError.empty}</div>
           <div>{userError.wrongCredentials}</div>
@@ -118,7 +118,9 @@ const inputHandler = (e) => {
                 errorHandler(e.target.name, e.target.value, "email")
               }
             />
-            <div>{userError.emailError}</div>
+              <div className="errorInput">{userError.emailError}</div>
+            
+
             <input
               className="inputtDesign"
               type="password"
@@ -129,8 +131,7 @@ const inputHandler = (e) => {
                 errorHandler(e.target.name, e.target.value, "password")
               }
             />
-            <div>{userError.passwordError}</div>
-          
+          <div className="errorInput">{userError.passwordError}</div>
 
 
           <div className="col text-center align-items-center">

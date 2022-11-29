@@ -50,7 +50,12 @@
 }
 
 
-
+.errorInput{
+    color: red;
+    font-style: italic;
+    font-size: 13px;
+    font-weight: bold;
+}
 
 .mouthImage{
 

@@ -23,6 +23,13 @@
 }
 
 
+.errorInput{
+    /* margin-top: -0.5em; */
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+}
+
 .inputsBox::before{
 
     content: url("../../assets/buttons.png");
