@@ -9,7 +9,7 @@ import Image from "react-bootstrap/Image"; //esto lo añado para poder importar 
 import userCard from "../../assets/userCardImage.png";
 import pattern1 from "../../assets/pattern1.png";
 import mouse from "../../assets/mouse.png";
-
+import { errorCheck } from "../../services/usefull";
 //ESTO LO IMPORTO PARA PODER USAR EL NOMBRE DEL TOKEN
 import { useJwt } from "react-jwt";
 import { Col, Container, Row } from "react-bootstrap";
@@ -18,7 +18,7 @@ import { editUser } from "../../services/ApiCalls";
 const Profile = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("jwt");
-    let { decodedToken } = useJwt(token);
+  let { decodedToken } = useJwt(token);
   if (decodedToken === null) {
     decodedToken = { name: "" };
   }
@@ -28,10 +28,6 @@ const Profile = () => {
     password: "",
     password2: "",
   });
-
-//   useEffect(()=>{
-//     setUser
-//   })
 
   const [userError, setUserError] = useState({
     usernameerror: "",
@@ -45,8 +41,6 @@ const Profile = () => {
       return true;
     }
   };
-
-
 
   const inputHandler = (e) => {
     setUser((prevState) => ({
@@ -66,20 +60,14 @@ const Profile = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    if (validateBody(body)) {
-      setUserError((prevState) => ({
-        ...prevState,
-        incompleteerror: "",
-      }));
+    if (body.username == "") {
+      delete body.username }
+      else if (body.password = "") {
+        delete body.password
+      }
       editUser(body, token)
-      .then(localStorage.removeItem("jwt"))
-      .then(navigate("/login"));
-    } else {
-      setUserError((prevState) => ({
-        ...prevState,
-        incompleteerror: "Complete every field",
-      }));
-    }
+        .then(localStorage.removeItem("jwt"))
+        .then(navigate("/login"));
   };
 
   const body = {
@@ -103,24 +91,37 @@ const Profile = () => {
                   className="inputDesign"
                   type="text"
                   name="username"
-                  value={user.username}
+                  placeholder="  New username ... |"
                   onChange={inputHandler}
                 />
 
                 <input
+                  onBlur={(e) =>
+                    errorHandler(e.target.name, e.target.value, "password")
+                  }
                   className="inputDesign"
                   type="Password"
                   name="password"
                   placeholder="  New password ... |"
                   onChange={inputHandler}
                 />
+                <div className="errorInput">{userError.passworderror}</div>
                 <input
                   className="inputDesign"
                   type="Password"
                   name="password2"
                   placeholder="  Repeat password ... |"
                   onChange={inputHandler}
+                  onBlur={(e) =>
+                    errorHandler(
+                      e.target.name,
+                      e.target.value,
+                      "password2",
+                      user.password
+                    )
+                  }
                 />
+                <div className="errorInput">{userError.password2error}</div>
 
                 <div className="container-fluid buttonsDiv">
                   <button className="buttonDesign">Update</button>
