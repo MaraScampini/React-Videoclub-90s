@@ -11,6 +11,7 @@ import mouth from "../../assets/mouth.png";
 import ray from "../../assets/ray.png";
 import mouse from "../../assets/mouse.png"
 import smile from "../../assets/smile.png"
+import { Col, Container, Row } from "react-bootstrap";
 
 
 
@@ -94,14 +95,14 @@ const inputHandler = (e) => {
       onSubmit={(e) => submitLogin(e)}
       className="container-fluid loginDesign d-flex justify-content-center align-items-center"
     >
-
+      <Container>
       <Image className="mouthImage zoom" src={mouth}></Image>
       <Image className="rayImage zoom" src={ray}></Image>
       <Image className="mouseImage zoom" src={mouse}></Image>
       <Image className="smileImage zoom" src={smile}></Image>
 
-      <div className="row">
-        <div className="col d-flex justify-content-around text-center align-items-center" id="inputsBox">
+      <Row className="row align-items-center justify-content-center">
+        <Col className="col-6  col-lg-4 d-flex justify-content-center text-center align-items-center" id="inputsBox">
 
           <div>{userError.empty}</div>
           <div>{userError.wrongCredentials}</div>
@@ -139,9 +140,9 @@ const inputHandler = (e) => {
             <button className="buttonDesign">Log In</button>
 
           </div>
-        </div>
-      </div>
-
+        </Col>
+      </Row>
+      </Container>
     </form>
 
 
