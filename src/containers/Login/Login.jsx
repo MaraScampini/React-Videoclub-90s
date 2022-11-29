@@ -37,48 +37,48 @@ const Login = () => {
     password: ""
   })
 
-const [userError, setUserError] = useState({
-  emailError: "",
-  passwordError: "",
-  empty: "",
-  wrongCredentials: ""
-})
+  const [userError, setUserError] = useState({
+    emailError: "",
+    passwordError: "",
+    empty: "",
+    wrongCredentials: ""
+  })
 
-let body = {
-  email: user.email,
-  password: user.password
-}
+  let body = {
+    email: user.email,
+    password: user.password
+  }
 
   const validateBody = (body) => {
     if (body.email !== "" && body.password !== "") { return true }
   }
 
-const submitLogin = (e) => {
-  e.preventDefault();
-  if(validateBody(body)){
-    userLogin(body)
-      .then((created) => console.log(created))
-      .catch((error) => {
-        console.log(error.response.data)
-        setUserError((prevState) => ({
-          ...prevState,
-          wrongCredentials: error.response.data.message,
-        }));
-      });
-  }  else {
-    setUserError((prevState) => ({
+  const submitLogin = (e) => {
+    e.preventDefault();
+    if (validateBody(body)) {
+      userLogin(body)
+        .then((created) => console.log(created))
+        .catch((error) => {
+          console.log(error.response.data)
+          setUserError((prevState) => ({
+            ...prevState,
+            wrongCredentials: error.response.data.message,
+          }));
+        });
+    } else {
+      setUserError((prevState) => ({
+        ...prevState,
+        empty: "Check all fields are filled"
+      }))
+    }
+  }
+
+  const inputHandler = (e) => {
+    setUser((prevState) => ({
       ...prevState,
-      empty: "Check all fields are filled"
+      [e.target.name]: e.target.value
     }))
   }
-}
-
-const inputHandler = (e) => {
-  setUser((prevState) => ({
-    ...prevState,
-    [e.target.name] : e.target.value
-  }))
-}
 
   const errorHandler = (field, value, type, password) => {
     let error = "";
@@ -96,16 +96,18 @@ const inputHandler = (e) => {
       className="container-fluid loginDesign d-flex justify-content-center align-items-center"
     >
       <Container>
-      <Image className="mouthImage zoom" src={mouth}></Image>
-      <Image className="rayImage zoom" src={ray}></Image>
-      <Image className="mouseImage zoom" src={mouse}></Image>
-      <Image className="smileImage zoom" src={smile}></Image>
+        <Row className="row align-items-center justify-content-center">
+          <Col className="col-md-4 imagesLog">
+             <Image className="smileImage zoom" src={smile}></Image>
+             <Image className="rayImage zoom" src={ray}></Image>
+             <Image className="mouthImage zoom" src={mouth}></Image>
 
-      <Row className="row align-items-center justify-content-center">
-        <Col className="col-6  col-lg-4 d-flex justify-content-center text-center align-items-center" id="inputsBox">
+          </Col>
 
-          <div>{userError.empty}</div>
-          <div>{userError.wrongCredentials}</div>
+          <Col className="col-6  col-lg-4 d-flex justify-content-center text-center align-items-center" id="inputsBox">
+
+            <div>{userError.empty}</div>
+            <div>{userError.wrongCredentials}</div>
             <h3 className="loginText">LOG IN </h3>
             <br />
 
@@ -119,8 +121,8 @@ const inputHandler = (e) => {
                 errorHandler(e.target.name, e.target.value, "email")
               }
             />
-              <div className="errorInput">{userError.emailError}</div>
-            
+            <div className="errorInput">{userError.emailError}</div>
+
 
             <input
               className="inputtDesign"
@@ -132,16 +134,22 @@ const inputHandler = (e) => {
                 errorHandler(e.target.name, e.target.value, "password")
               }
             />
-          <div className="errorInput">{userError.passwordError}</div>
+            <div className="errorInput">{userError.passwordError}</div>
 
 
-          <div className="col text-center align-items-center">
+            <div className="col text-center align-items-center">
 
-            <button className="buttonDesign">Log In</button>
+              <button className="buttonDesign">Log In</button>
 
-          </div>
-        </Col>
-      </Row>
+            </div>
+          </Col>
+
+          <Col className="col-md-4 imagesLog">
+            <Image className="mouseImage zoom" src={mouse}></Image>
+
+          </Col>
+          
+        </Row>
       </Container>
     </form>
 

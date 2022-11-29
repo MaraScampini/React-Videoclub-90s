@@ -5,6 +5,7 @@ import { myLoans } from "../../../services/ApiCalls";
 import { useNavigate } from "react-router-dom";
 import "./MovieDetail.css";
 import axios from "axios";
+import { Container } from "react-bootstrap";
 
 const URL = "http://localhost:3000";
 
@@ -65,10 +66,13 @@ function MovieDetail() {
     getIds();
 
     return (
-      <div className="container-fluid" id="container">
-        <div className="row d-flex justify-content-center" id="rowDesign">
+
+      <form>
+      <div className="container-fluid principalDiv" id="container">
+        
+        <div className="row d-flex justify-content-center align-items-center" id="rowDesign">
           <div
-            className="col-7 col-sm-5 col-lg-3 col-xl-2"
+            className="col-7 col-sm-5 col-lg-4 col-xl-2 "
             id="cardDesignDetail"
           >
             {/* <p className="textCard">{selectedFilm.title}</p> */}
@@ -110,6 +114,8 @@ function MovieDetail() {
           </div>
         </div>
       </div>
+      </form>
+      
     );
   }
 }
