@@ -2,26 +2,23 @@ import React, { useState, useEffect } from "react";
 import "./Profile.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
-// import { useDispatch } from "react-redux";
-// import axios from "axios";
-// import { errorCheck } from "../../services/usefull";
-import Image from "react-bootstrap/Image"; //esto lo añado para poder importar una imagen
+import Image from "react-bootstrap/Image";
 import userCard from "../../assets/userCardImage.png";
-import pattern1 from "../../assets/pattern1.png";
 import mouse from "../../assets/mouse.png";
 import { errorCheck } from "../../services/usefull";
-//ESTO LO IMPORTO PARA PODER USAR EL NOMBRE DEL TOKEN
 import { useJwt } from "react-jwt";
 import { Col, Container, Row } from "react-bootstrap";
 import { editUser } from "../../services/ApiCalls";
 
 const Profile = () => {
   const navigate = useNavigate();
-  const token = localStorage.getItem("jwt");
-  let { decodedToken } = useJwt(token);
-  if (decodedToken === null) {
-    decodedToken = { name: "" };
-  }
+    const token = localStorage.getItem("jwt");
+    let { decodedToken } = useJwt(token);
+    console.log({decodedToken});
+
+
+ 
+
 
   const [user, setUser] = useState({
     username: "",
@@ -35,6 +32,14 @@ const Profile = () => {
     password2error: "",
     incompleteerror: "",
   });
+
+  useEffect(() => {
+    setUser((prevState) => ({
+      ...prevState,
+      username: decodedToken?.username,
+    }));
+    console.log({ decodedToken });
+  }, [decodedToken]);
 
   const validateBody = (body) => {
     if (body.username !== "" && body.password !== "" && body.password2 !== "") {
@@ -61,13 +66,13 @@ const Profile = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (body.username == "") {
-      delete body.username }
-      else if (body.password = "") {
-        delete body.password
-      }
-      editUser(body, token)
-        .then(localStorage.removeItem("jwt"))
-        .then(navigate("/login"));
+      delete body.username;
+    } else if ((body.password = "")) {
+      delete body.password;
+    }
+    editUser(body, token)
+      .then(localStorage.removeItem("jwt"))
+      .then(navigate("/login"));
   };
 
   const body = {
@@ -75,7 +80,7 @@ const Profile = () => {
     password: user.password,
   };
 
-  if (token) {
+  if (decodedToken) {
     return (
       <Container className="container-fluid">
         <Row className="row rowDesign">
@@ -92,6 +97,7 @@ const Profile = () => {
                   type="text"
                   name="username"
                   placeholder="  New username ... |"
+                  value={user.username}
                   onChange={inputHandler}
                 />
 
