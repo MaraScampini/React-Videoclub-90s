@@ -10,7 +10,7 @@
 #rowDesign{
   /* max-height: 100vh; */
   background-color: #ffe083;
-  /* height: 88.5vh; */
+  height: 88.5vh;
 }
 
 
@@ -21,7 +21,7 @@
   justify-content: center;
   height: fit-content;
   padding: 0;
-
+  width: 20em;
   border: 2px solid black;
   border-radius: 1rem;
   background-color: rgb(255, 254, 245);
