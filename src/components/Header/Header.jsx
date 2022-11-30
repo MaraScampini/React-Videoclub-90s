@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { addSearch, filmData, addCriteria } from "../Films/filmSlice";
 import { logout, login, userData } from "../../containers/User/userSlice";
 import { searchMovies } from "../../services/ApiCalls";
-import { useJwt } from "react-jwt";
+import { useJwt, decodeToken } from "react-jwt";
 import Image from "react-bootstrap/Image";
 import logo from "../../assets/logo.png"
 import userLogo from "../../assets/userLogo.png"
@@ -39,6 +39,15 @@ const Header = () => {
     navigate("/")
   }
 
+  const isAdmin = () => {
+    if(decodedToken.role == "admin"){
+      console.log(decodedToken.role)
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   // Life-cycle
   useEffect(() => {
     dispatch(addCriteria(criteria));
@@ -58,7 +67,9 @@ const Header = () => {
     return (
       <Navbar collapseOnSelect expand="lg" className="headerDesign">
         <Container>
-          <Navbar.Brand onClick={() => navigate("/")}><Image className="logoImage zoomLogo" src={logo}></Image></Navbar.Brand>
+          <Navbar.Brand onClick={() => navigate("/")}>
+            <Image className="logoImage zoomLogo" src={logo}></Image>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav" className="m-auto">
             <Nav
@@ -100,12 +111,20 @@ const Header = () => {
               className="fw-bold mx-auto mt-1 mb-md-1 text-center"
             >
               <div>
-              <Image className="userLogo" src={userLogo}></Image>
-              
-              Hi, {decodedToken.name}! 
+                <Image className="userLogo" src={userLogo}></Image>
+                Hi, {decodedToken.name}!
               </div>
-             
             </Nav>
+            {isAdmin() ? (
+              <Nav
+                onClick={() => navigate("/admin")}
+                className="fw-bold mx-auto mt-1 mb-md-1 text-center"
+              >
+                Admin
+              </Nav>
+            ) : (
+              <div></div>
+            )}
             <Nav
               onClick={() => logout()}
               className="fw-bold mx-auto mt-1 mb-md-1 text-center"

@@ -46,8 +46,6 @@ export const editUser = async (body, token) => {
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
-  console.log(token)
-  console.log(body)
   const bodyParameters = {
     username: body.username,
     password: body.password,
@@ -59,3 +57,59 @@ export const editUser = async (body, token) => {
     console.error(error);
   }
 };
+
+export const getAllLoans = async (token) => {
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+  try {
+    let res = await axios.get(`${URL}/loans/`, config);
+    return res.data.resp;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export const getAllUsers = async (token) => {
+   const config = {
+     headers: { Authorization: `Bearer ${token}` },
+   };
+   try {
+     let res = await axios.get(`${URL}/users/all`, config);
+          console.log(res);
+
+     return res.data;
+   } catch (error) {
+     console.error(error);
+   }
+}
+
+export const getAllDeletedUsers = async (token) => {
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+  try {
+    let res = await axios.get(`${URL}/users/deleted`, config);
+    console.log(res);
+
+    return res.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const deleteUser = async (body, token) => {
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+  const bodyParameters = {
+    email: body.email,
+  };
+  try {
+    let res = await axios.patch(`${URL}/users/delete`, bodyParameters, config)
+    console.log(body)
+    return res;
+  } catch (error) {
+    
+  }
+}
