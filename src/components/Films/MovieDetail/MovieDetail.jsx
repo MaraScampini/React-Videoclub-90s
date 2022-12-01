@@ -67,7 +67,7 @@ function MovieDetail() {
 
     return (
       <Container fluid className="containerHeight">
-        <Row className="d-flex justify-content-center">
+        <Row className="d-flex justify-content-center rowDetail">
           <Col className="col-9 col-md-6 d-flex justify-content-center align-items-center">
             <div id="cardDesignDetail">
               <img

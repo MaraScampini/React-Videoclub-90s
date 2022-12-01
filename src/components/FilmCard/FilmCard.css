@@ -5,7 +5,7 @@
 
   margin: 1em;
 
-  width: 11em;
+  max-width: 20rem;
 
   border: 2px solid black;
   border-radius: 1em;

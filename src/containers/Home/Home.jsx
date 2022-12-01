@@ -45,7 +45,7 @@ const Home = () => {
         <Row className="d-flex justify-content-center">
           {films.map((film, index) => {
             return (
-              <Col className="col-10 col-md-2 d-flex justify-content-center">
+              <Col className="col-10 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
                 <FilmCard
                   key={index}
                   movie={film}
@@ -64,10 +64,10 @@ const Home = () => {
           <div className="fw-bold fs-2">Hello, {decodedToken?.name}!</div>
           <div className="fw-bold fs-4">These are your loans</div>
         </Row>
-        <Row>
+        <Row className="d-flex justify-content-center">
           {loans.map((movie, index) => {
             return (
-              <Col className="col-10 col-md-2 d-flex justify-content-center">
+              <Col className="col-10 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
                 <FilmCard
                   key={index}
                   movie={movie.Movie}
@@ -85,7 +85,7 @@ const Home = () => {
         <Row className="d-flex justify-content-center">
           {movies.map((movie, index) => {
             return (
-              <Col className="col-10 col-md-2 d-flex justify-content-center">
+              <Col className="col-10 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center ">
                 <FilmCard
                   key={index}
                   movie={movie}
