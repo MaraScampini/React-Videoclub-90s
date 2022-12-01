@@ -7,11 +7,6 @@
   }
 }
 
-#rowDesign{
-  /* max-height: 100vh; */
-  background-color: #ffe083;
-  height: auto;
-}
 
 
 
@@ -108,13 +103,13 @@
 
 
 .principalDiv{
-  height: 80vh;
+  height: 90vh;
 
 }
 
 #rowDesign{
   background-image: url("../../../assets/pattern1.png");
-  height:auto;
-    
+  height: 40em;
 
 }
+

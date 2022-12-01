@@ -85,7 +85,7 @@ function MovieDetail() {
             />
           </div>
           <div className="col-lg-1"></div>
-          <div className="col-12 col-lg-4  d-flex justify-content-center align-items-center">
+          <div className="col-12 col-lg-4 d-flex justify-content-center align-items-center">
             <div className="filmDetailsCard">
               <p className="filmTitle">{(selectedFilm.title).toUpperCase()}</p>
               <p className="textDetail">Directed by: {selectedFilm.director}</p>

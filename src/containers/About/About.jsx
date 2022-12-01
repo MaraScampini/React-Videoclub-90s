@@ -12,6 +12,9 @@ const About = () => {
     return (
         <Container className="container-fluid aboutDesign">
             <Row className="row rowDesign">
+
+                {/* NO CONSIGO QUE SE ME AJUSTEN LAS COLS A LAS RESOLUCIONES QUE TOCA POR FAVOR AIUUUUUUUUDA */}
+
                 <Col className="col-6  col1 leftTarget d-flex justify-content-center align-items-center">
 
                     <div className="aboutTarget text-center">
