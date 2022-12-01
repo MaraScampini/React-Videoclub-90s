@@ -31,19 +31,19 @@ function Movies() {
 
   if (films.length !== 0 && query !== "") {
     return (
-      <Container className="container-fluid homeDesign">
-        <Row className="row d-flex justify-content-center">
-          <Col className="col-10 rowDesign">
-            {films.map((film, index) => {
-              return (
+      <Container className="container homeDesign">
+        <Row className="d-flex justify-content-center">
+          {films.map((film, index) => {
+            return (
+              <Col className="col-10 col-md-2 d-flex justify-content-center">
                 <FilmCard
                   key={index}
                   movie={film}
                   clickedMovie={clickedMovie}
                 />
-              );
-            })}
-          </Col>
+              </Col>
+            );
+          })}
         </Row>
       </Container>
     );
@@ -52,15 +52,16 @@ function Movies() {
       <Container className="container homeDesign">
         <Row className="d-flex justify-content-center">
           {movies.map((movie, index) => {
-              return (
-                <Col className="col-10 col-md-2 d-flex justify-content-center">
-                  <FilmCard
-                    key={index}
-                    movie={movie}
-                    clickedMovie={clickedMovie}
-                  />
-                </Col>
-              )})}
+            return (
+              <Col className="col-10 col-md-2 d-flex justify-content-center">
+                <FilmCard
+                  key={index}
+                  movie={movie}
+                  clickedMovie={clickedMovie}
+                />
+              </Col>
+            );
+          })}
         </Row>
       </Container>
     );
