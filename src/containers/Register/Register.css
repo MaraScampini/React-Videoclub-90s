@@ -8,9 +8,9 @@
     
 }
 
-.inputsBox{
+.inputsBoxRegister{
     background-color: rgb(254, 245, 245);
-    height: 32em;
+    height: auto;
     width: 24em;    
 
     display: flex;
@@ -31,7 +31,7 @@
     font-weight: bold;
 }
 
-.inputsBox::before{
+.inputsBoxRegister::before{
 
     content: url("../../assets/buttons.png");
     display: flex;
@@ -59,15 +59,16 @@
     box-shadow: none;
 }
 
-.buttonDesign{
+.buttonDesignRegister{
     background-color: white;
     height: 5vh;
     width: 20vh;
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0) 2px 3px;
+    margin-bottom: 2em;
 }
 
-.buttonDesign:hover{
+.buttonDesignRegister:hover{
     box-shadow: none;
     cursor: pointer;
     transition: 0.15s linear;
@@ -159,8 +160,18 @@
 
 @media(max-width: 500px){
 
-    .inputsBox{
+    .inputsBoxRegister{
         width: 25vw;
     }
 
+}
+
+@media(max-width: 360px){
+    .inputsBoxRegister{
+        margin: 2em; 
+        height: 100%;
+    }
+    /* .divContainerReg{
+        height: 50em;
+    } */
 }

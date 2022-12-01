@@ -129,17 +129,17 @@ const Register = () => {
       className="container-fluid registerDesign d-flex justify-content-center align-items-center"
     >
       <Container>
-        <Row className="row d-flex justify-content-center">
+        <Row className="row d-flex justify-content-center divContainerReg">
           <Col className="col-md-4 imagesReg">
             <Image className="rayImageReg zoom" src={ray}></Image>
             <Image className="smileImageReg zoom" src={smile}></Image>
           </Col>
-          <Col className="col-10 col-md-4 text-center align-items-center inputsBox">
+          <Col className="col-10 col-md-4 text-center align-items-center inputsBoxRegister">
 
             <div>{userError.incompleteerror}</div>
             <div>{userError.emailAlreadyInBBDD}</div>
 
-            <div id="registerText">REGISTER </div>
+            <h3 id="registerText">REGISTER </h3>
 
             <input
               onBlur={(e) =>
@@ -225,7 +225,7 @@ const Register = () => {
             <div className="errorInput">{userError.password2error}</div>
 
             <div className="col d-flex text-center align-items-center">
-              <button className="buttonDesign">Register</button>
+              <button className="buttonDesignRegister">Register</button>
             </div>
           </Col>
 
