@@ -34,7 +34,7 @@ function Movies() {
         <Row className="d-flex justify-content-center">
           {films.map((film, index) => {
             return (
-              <Col className="col-10 col-md-2 d-flex justify-content-center">
+              <Col className="col-10 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
                 <FilmCard
                   key={index}
                   movie={film}
@@ -52,7 +52,7 @@ function Movies() {
         <Row className="d-flex justify-content-center">
           {movies.map((movie, index) => {
             return (
-              <Col className="col-10 col-md-2 d-flex justify-content-center">
+              <Col className="col-10 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
                 <FilmCard
                   key={index}
                   movie={movie}
