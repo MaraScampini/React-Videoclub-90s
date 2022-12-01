@@ -5,7 +5,7 @@ import { myLoans } from "../../../services/ApiCalls";
 import { useNavigate } from "react-router-dom";
 import "./MovieDetail.css";
 import axios from "axios";
-import { Container } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 
 const URL = "http://localhost:3000";
 
@@ -66,40 +66,38 @@ function MovieDetail() {
     getIds();
 
     return (
-
-      <form>
-      <div className="container-fluid principalDiv" id="container">
-        
-        <div className="row d-flex justify-content-center align-items-center" id="rowDesign">
-          <div
-            className="col-7 col-sm-5 col-lg-4 col-xl-2 "
-            id="cardDesignDetail"
+      <Container fluid className="containerHeight">
+        <Row className="d-flex justify-content-center">
+          <Col className="col-9 col-md-6 d-flex justify-content-center align-items-center">
+            <div id="cardDesignDetail">
+              <img
+                className="imageDetail"
+                src={
+                  "https://image.tmdb.org/t/p/w200/" + selectedFilm.poster_path
+                }
+                alt="movie poster"
+              />
+            </div>
+          </Col>
+          <Col
+            className="col-12 col-md-6 d-flex justify-content-center align-items-center editTarget"
+            id=""
           >
-            {/* <p className="textCard">{selectedFilm.title}</p> */}
-            <img
-              className="imageDetail"
-              src={
-                "https://image.tmdb.org/t/p/w200/" + selectedFilm.poster_path
-              }
-              alt=""
-            />
-          </div>
-          <div className="col-lg-1"></div>
-          <div className="col-12 col-lg-4 d-flex justify-content-center align-items-center">
             <div className="filmDetailsCard">
-              <p className="filmTitle">{(selectedFilm.title).toUpperCase()}</p>
+              <p className="filmTitle">{selectedFilm.title.toUpperCase()}</p>
               <p className="textDetail">Directed by: {selectedFilm.director}</p>
               <p className="textDetail"> {selectedFilm.description}</p>
-              {token && myLoansIds.includes(selectedFilm.id_movie) === false && (
-                <div className="buttonPositioner">
-                  <div
-                    className="buttonDetail"
-                    onClick={() => loanMovie(selectedFilm, token)}
-                  >
-                    Rent
+              {token &&
+                myLoansIds.includes(selectedFilm.id_movie) === false && (
+                  <div className="buttonPositioner">
+                    <div
+                      className="buttonDetail"
+                      onClick={() => loanMovie(selectedFilm, token)}
+                    >
+                      Rent
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
               {myLoansIds.includes(selectedFilm.id_movie) && (
                 <div className="buttonPositioner">
                   <div
@@ -111,11 +109,9 @@ function MovieDetail() {
                 </div>
               )}
             </div>
-          </div>
-        </div>
-      </div>
-      </form>
-      
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

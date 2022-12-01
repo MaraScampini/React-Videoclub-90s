@@ -1,61 +1,42 @@
 
 
-@media (max-width: 512px) {
-  #container{
-      padding: 1rem ;
-
-  }
+.row {
+min-height: 90vh;
 }
-
-
-
 
 #cardDesignDetail {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: fit-content;
   padding: 0;
-  width: 20em;
+  margin: 1rem 0 1.5rem 0;
+  width: 25em;
   border: 2px solid black;
   border-radius: 1rem;
   background-color: rgb(255, 254, 245);
 
-  box-shadow: rgba(0, 0, 0) 3px 4px;
+  box-shadow: rgba(0, 0, 0) 3px 4px, rgba(0, 0, 0, 0.5) 6px 8px, rgba(0, 0, 0, 0.25) 10px 12px;
+  
 }
 
 .imageDetail {
   scale: 80%;
   border-radius: 1rem;
 }
-/* 
-#cardDesignDetail::before {
-  content: url(../../../assets/x-square.svg);
-  display: flex;
-  justify-content: flex-end;
-  padding: 0.2em 0.5em 0 0;
-  height: 3rem;
-  width: 100%;
-  border-bottom: 1px solid black;
-} */
-
-.textCard {
-  padding-left: 1rem;
-  margin-top: -2rem;
-}
 
 .filmDetailsCard {
   background-color: #bcd8e6;
-  width: 100%;
+  width: 80%;
+  height: fit-content;
   margin: 1rem 0;
-  padding: 1rem;
+  padding: 3rem 1rem;
   border-radius: 1em;
   border: 1px solid black;
+  box-shadow: rgba(0, 0, 0) 3px 4px;
 }
 
-.filmDetailsCard>* {
-    background-color: #bcd8e6;
-
+.filmDetailsCard > * {
+  background-color: #bcd8e6;
 }
 
 .filmDetailsCard::before {
@@ -66,17 +47,17 @@
   border-bottom: 1px solid black;
 }
 
-
 .filmTitle {
   margin: -5rem 0 0 0;
   font-size: 2rem;
   padding: 0 1rem;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 .textDetail {
   padding-left: 1em;
 }
+
 
 .buttonPositioner {
   display: flex;
@@ -95,21 +76,7 @@
   box-shadow: rgba(0, 0, 0) 2px 3px;
 }
 
-
-.buttonDetail:hover{
+.buttonDetail:hover {
   cursor: pointer;
   box-shadow: none;
 }
-
-
-.principalDiv{
-  height: 90vh;
-
-}
-
-#rowDesign{
-  background-image: url("../../../assets/pattern1.png");
-  height: 40em;
-
-}
-
