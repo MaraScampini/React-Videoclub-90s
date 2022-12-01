@@ -1,7 +1,8 @@
 import axios from "axios";
-import { Navigate, useNavigate } from "react-router-dom";
 
 const URL = "http://localhost:3000";
+
+// GET
 
 export const homeMovies = async () => {
   try {
@@ -42,6 +43,48 @@ export const myLoans = async (token) => {
   }
 };
 
+export const getAllLoans = async (token) => {
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+  try {
+    let res = await axios.get(`${URL}/loans/`, config);
+    return res.data.resp;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getAllUsers = async (token) => {
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+  try {
+    let res = await axios.get(`${URL}/users/all`, config);
+    console.log(res);
+
+    return res.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getAllDeletedUsers = async (token) => {
+  const config = {
+    headers: { Authorization: `Bearer ${token}` },
+  };
+  try {
+    let res = await axios.get(`${URL}/users/deleted`, config);
+    console.log(res);
+
+    return res.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+// PATCH
+
 export const editUser = async (body, token) => {
   const config = {
     headers: { Authorization: `Bearer ${token}` },
@@ -53,46 +96,6 @@ export const editUser = async (body, token) => {
   try {
     let res = await axios.patch(`${URL}/users/edit`, bodyParameters, config);
     return res.data.resp;
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-export const getAllLoans = async (token) => {
-  const config = {
-    headers: { Authorization: `Bearer ${token}` },
-  };
-  try {
-    let res = await axios.get(`${URL}/loans/`, config);
-    return res.data.resp;
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-export const getAllUsers = async (token) => {
-   const config = {
-     headers: { Authorization: `Bearer ${token}` },
-   };
-   try {
-     let res = await axios.get(`${URL}/users/all`, config);
-          console.log(res);
-
-     return res.data;
-   } catch (error) {
-     console.error(error);
-   }
-}
-
-export const getAllDeletedUsers = async (token) => {
-  const config = {
-    headers: { Authorization: `Bearer ${token}` },
-  };
-  try {
-    let res = await axios.get(`${URL}/users/deleted`, config);
-    console.log(res);
-
-    return res.data;
   } catch (error) {
     console.error(error);
   }

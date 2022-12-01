@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { allMovies } from "../../services/ApiCalls";
 import { useDispatch, useSelector } from "react-redux";
 import { addFilm, filmData } from "../../components/Films/filmSlice";
+import { Col, Container, Row } from "react-bootstrap";
 
 import "./Movies.css";
 import FilmCard from "../../components/FilmCard/FilmCard";
-import { Col, Container, Row } from "react-bootstrap";
 
 function Movies() {
   const [movies, setMovies] = useState([]);

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import "./Home.css";
 import { homeMovies, myLoans } from "../../services/ApiCalls";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addFilm, filmData } from "../../components/Films/filmSlice";
-import FilmCard from "../../components/FilmCard/FilmCard";
 import { useJwt } from "react-jwt";
 import { Col, Container, Row } from "react-bootstrap";
+import FilmCard from "../../components/FilmCard/FilmCard";
+import "./Home.css";
+
 
 const Home = () => {
   const navigate = useNavigate();

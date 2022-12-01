@@ -20,19 +20,7 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const userLogin = async (body) => {
-    let res = await axios.post("http://localhost:3000/auth/login", body)
-
-    let jwt = res.data.jwt;
-    let credentials = {
-      token: jwt
-    }
-
-    localStorage.setItem("jwt", credentials.token)
-    navigate("/")
-  }
-
-  const [user, setUser] = useState({
+    const [user, setUser] = useState({
     email: "",
     password: ""
   })
@@ -48,6 +36,18 @@ const Login = () => {
     email: user.email,
     password: user.password
   }
+
+  const userLogin = async (body) => {
+    let res = await axios.post("http://localhost:3000/auth/login", body);
+
+    let jwt = res.data.jwt;
+    let credentials = {
+      token: jwt,
+    };
+
+    localStorage.setItem("jwt", credentials.token);
+    navigate("/");
+  };
 
   const validateBody = (body) => {
     if (body.email !== "" && body.password !== "") { return true }

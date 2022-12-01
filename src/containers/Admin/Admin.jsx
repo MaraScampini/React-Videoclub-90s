@@ -25,10 +25,12 @@ function Admin() {
   useEffect(() => {
     getAllLoans(token).then((loans) => setLoans(loans));
   }, []);
+
   useEffect(() => {
     getAllUsers(token).then((users) => setUsers(users));
     console.log("first")
   }, [deleted]);
+  
     useEffect(() => {
       getAllDeletedUsers(token).then((deletedUsers) => setDeletedUsers(deletedUsers));
       console.log("second")
