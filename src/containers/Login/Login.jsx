@@ -104,7 +104,7 @@ const Login = () => {
 
           </Col>
 
-          <Col className="col-6  col-lg-4 d-flex justify-content-center text-center align-items-center" id="inputsBox">
+          <Col className="col-9  col-lg-4 d-flex justify-content-center text-center align-items-center" id="inputsBox">
 
             <div>{userError.empty}</div>
             <div>{userError.wrongCredentials}</div>

@@ -86,14 +86,14 @@ const Profile = () => {
         <Row className="row rowDesign">
           <Col className="col col-sm-6 editData d-flex justify-content-center align-items-center">
             <form onSubmit={submitHandler} className="">
-              <div className=" text-center justify-content-center align-items-center">
+              <div className=" text-center d-flex flex-column justify-content-center align-items-center">
                 <Image className="mouseImage zoom" src={mouse}></Image>
 
                 <h3>Edit your user data.</h3>
                 <div>{userError.incompleteerror}</div>
 
                 <input
-                  className="inputDesign"
+                  className="inputUserDesign"
                   type="text"
                   name="username"
                   placeholder="  New username ... |"
@@ -105,7 +105,7 @@ const Profile = () => {
                   onBlur={(e) =>
                     errorHandler(e.target.name, e.target.value, "password")
                   }
-                  className="inputDesign"
+                  className="inputUserDesign"
                   type="Password"
                   name="password"
                   placeholder="  New password ... |"
@@ -113,7 +113,7 @@ const Profile = () => {
                 />
                 <div className="errorInput">{userError.passworderror}</div>
                 <input
-                  className="inputDesign"
+                  className="inputUserDesign"
                   type="Password"
                   name="password2"
                   placeholder="  Repeat password ... |"
