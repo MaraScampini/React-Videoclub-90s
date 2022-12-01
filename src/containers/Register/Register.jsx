@@ -129,7 +129,7 @@ const Register = () => {
       className="container-fluid registerDesign d-flex justify-content-center align-items-center"
     >
       <Container>
-        <Row className="row d-flex justify-content-center divContainerReg">
+        <Row className="row d-flex justify-content-center align-content-center divContainerReg">
           <Col className="col-md-4 imagesReg">
             <Image className="rayImageReg zoom" src={ray}></Image>
             <Image className="smileImageReg zoom" src={smile}></Image>
@@ -224,7 +224,7 @@ const Register = () => {
             />
             <div className="errorInput">{userError.password2error}</div>
 
-            <div className="col d-flex text-center align-items-center">
+            <div className="col d-flex text-center align-items-center buttonDivReg">
               <button className="buttonDesignRegister">Register</button>
             </div>
           </Col>
