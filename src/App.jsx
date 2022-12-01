@@ -11,6 +11,7 @@ import Profile from './containers/Profile/Profile';
 import About from './containers/About/About';
 import Admin from './containers/Admin/Admin';
 import Deleted from './containers/Deleted/Deleted';
+import DirectedBy from './containers/DirectedBy/DirectedBy';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/deleted" element={<Deleted />} />
+          <Route path="/directed_by" element={<DirectedBy />} />
         </Routes>
       </BrowserRouter>
     </div>

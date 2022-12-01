@@ -58,6 +58,10 @@ min-height: 90vh;
   padding-left: 1em;
 }
 
+.linkDetail:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 .buttonPositioner {
   display: flex;

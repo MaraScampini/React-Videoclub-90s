@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { filmData } from "../filmSlice";
-import { myLoans } from "../../../services/ApiCalls";
+import { useDispatch, useSelector } from "react-redux";
+import { addByDirector, filmData } from "../filmSlice";
+import { getByDirector, myLoans } from "../../../services/ApiCalls";
 import { useNavigate } from "react-router-dom";
 import "./MovieDetail.css";
 import axios from "axios";
@@ -15,6 +15,7 @@ function MovieDetail() {
 
   const [loans, setLoans] = useState([]);
        const navigate = useNavigate();
+       const dispatch = useDispatch();
 
 
    const loanMovie = async (body, token) => {
@@ -62,6 +63,15 @@ function MovieDetail() {
   };
 
   const selectedFilm = useSelector(filmData);
+
+const handleDirector = () => {
+  getByDirector(selectedFilm.director)
+  .then((res) => {
+    dispatch(addByDirector(res))
+    navigate("/directed_by")
+  })
+}
+
   if (selectedFilm?.id_movie !== undefined) {
     getIds();
 
@@ -85,7 +95,7 @@ function MovieDetail() {
           >
             <div className="filmDetailsCard">
               <p className="filmTitle">{selectedFilm.title.toUpperCase()}</p>
-              <p className="textDetail">Directed by: {selectedFilm.director}</p>
+              <p className="textDetail linkDetail" onClick={handleDirector}>Directed by: {selectedFilm.director}</p>
               <p className="textDetail"> {selectedFilm.description}</p>
               {token &&
                 myLoansIds.includes(selectedFilm.id_movie) === false && (
