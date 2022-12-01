@@ -3,11 +3,5 @@
   min-height: 100vh;
 }
 
-.rowDesign {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: start;
-}
 
 

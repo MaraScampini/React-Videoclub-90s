@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { allMovies } from "../../services/ApiCalls";
 import { useDispatch, useSelector } from "react-redux";
 import { addFilm, filmData } from "../../components/Films/filmSlice";
+import { Col, Container, Row } from "react-bootstrap";
 
 import "./Movies.css";
 import FilmCard from "../../components/FilmCard/FilmCard";
@@ -30,35 +30,39 @@ function Movies() {
 
   if (films.length !== 0 && query !== "") {
     return (
-      <div className="container-fluid homeDesign">
-        <div className="row d-flex justify-content-center">
-          <div className="col-10 rowDesign">
-            {films.map((film, index) => {
-              return (
+      <Container className="container homeDesign">
+        <Row className="d-flex justify-content-center">
+          {films.map((film, index) => {
+            return (
+              <Col className="col-10 col-md-2 d-flex justify-content-center">
                 <FilmCard
                   key={index}
                   movie={film}
                   clickedMovie={clickedMovie}
                 />
-              );
-            })}
-          </div>
-        </div>
-      </div>
+              </Col>
+            );
+          })}
+        </Row>
+      </Container>
     );
   } else if (movies.length > 0) {
     return (
-      <div className="container-fluid homeDesign">
-        <div className="row d-flex justify-content-center">
-          <div className="col-10 rowDesign">
-            {movies.map((movie, index) => {
-              return (
-                  <FilmCard key={index} movie={movie} clickedMovie={clickedMovie}/>
-              );
-            })}
-          </div>
-        </div>
-      </div>
+      <Container className="container homeDesign">
+        <Row className="d-flex justify-content-center">
+          {movies.map((movie, index) => {
+            return (
+              <Col className="col-10 col-md-2 d-flex justify-content-center">
+                <FilmCard
+                  key={index}
+                  movie={movie}
+                  clickedMovie={clickedMovie}
+                />
+              </Col>
+            );
+          })}
+        </Row>
+      </Container>
     );
   } else {
     return (
