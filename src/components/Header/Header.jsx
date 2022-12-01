@@ -48,6 +48,11 @@ const Header = () => {
     }
   }
 
+  const submitHandler = (e) => {
+    e.preventDefault();
+    navigate("/movies");
+  }
+
   // Life-cycle
   useEffect(() => {
     dispatch(addCriteria(criteria));
@@ -85,7 +90,10 @@ const Header = () => {
               About Us
             </Nav>
 
-            <Form className="formDesign d-flex mt-1 mb-md-1 m-auto">
+            <Form
+              className="formDesign d-flex mt-1 mb-md-1 m-auto"
+              onSubmit={submitHandler}
+            >
               <Form.Control
                 type="search"
                 placeholder="Search"

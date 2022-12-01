@@ -19,6 +19,7 @@ function Admin() {
   const [loans, setLoans] = useState([]);
   const [users, setUsers] = useState([]);
   const [deletedUsers, setDeletedUsers] = useState([]);
+  const [deleted, setDeleted] = useState(false);
 
 
   useEffect(() => {
@@ -26,10 +27,13 @@ function Admin() {
   }, []);
   useEffect(() => {
     getAllUsers(token).then((users) => setUsers(users));
-  }, []);
+    console.log("first")
+  }, [deleted]);
     useEffect(() => {
       getAllDeletedUsers(token).then((deletedUsers) => setDeletedUsers(deletedUsers));
-    }, []);
+      console.log("second")
+    }, [deleted]);
+
 
   const isActive = (loan) => {
     if (loan.end_date == null) {
@@ -47,7 +51,7 @@ function Admin() {
 
   const deleteUserAdmin = (user) => {
     deleteUser(user, token)
-    .then(navigate("/deleted"))
+    .then(setDeleted(!deleted))
   }
 
   if (isAdmin()) {
