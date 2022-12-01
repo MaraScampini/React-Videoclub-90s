@@ -6,7 +6,8 @@ export const filmSlice = createSlice({
     details: {},
     query: "",
     search: [],
-    loans: []
+    loans: [],
+    byDirector: [],
   },
   reducers: {
     addFilm: (state, action) => {
@@ -32,11 +33,18 @@ export const filmSlice = createSlice({
         ...state,
         loans: action.payload
       }
+    },
+    addByDirector: (state, action) => {
+      return {
+        ...state,
+        byDirector: action.payload
+      }
     }
   },
 });
 
-export const { addFilm, addSearch, addCriteria } = filmSlice.actions;
+export const { addFilm, addSearch, addCriteria, addByDirector } = filmSlice.actions;
 
 export const filmData = (state) => state.film;
+export const directorData = (state) => state.film.byDirector;
 export default filmSlice.reducer;

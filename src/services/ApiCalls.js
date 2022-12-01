@@ -24,9 +24,20 @@ export const allMovies = async () => {
 
 export const searchMovies = async (criteria) => {
   try {
-    let res = await axios.get(`http://localhost:3000/movies/title/${criteria}`);
+    let res = await axios.get(`${URL}/movies/title/${criteria}`);
     return res.data;
   } catch (error) {}
+};
+
+export const getByDirector = async (criteria) => {
+  try {
+    let res = await axios.get(`${URL}/movies/director/${criteria}`);
+    console.log(res)
+    console.log(res.data)
+    return res.data;
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 export const myLoans = async (token) => {
@@ -83,6 +94,8 @@ export const getAllDeletedUsers = async (token) => {
   }
 };
 
+
+
 // PATCH
 
 export const editUser = async (body, token) => {
@@ -109,10 +122,8 @@ export const deleteUser = async (body, token) => {
     email: body.email,
   };
   try {
-    let res = await axios.patch(`${URL}/users/delete`, bodyParameters, config)
-    console.log(body)
+    let res = await axios.patch(`${URL}/users/delete`, bodyParameters, config);
+    console.log(body);
     return res;
-  } catch (error) {
-    
-  }
-}
+  } catch (error) {}
+};

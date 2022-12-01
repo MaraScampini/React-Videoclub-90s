@@ -60,12 +60,10 @@ const Header = () => {
     if (criteria !== "") {
       searchMovies(criteria)
         .then((result) => {
-          console.log(result);
           dispatch(addSearch(result));
         })
         .catch((error) => console.error(error));
     }
-    console.log(filmData);
   }, [criteria]);
 
   if (token) {
