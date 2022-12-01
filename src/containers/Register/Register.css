@@ -10,8 +10,9 @@
 
 .inputsBoxRegister{
     background-color: rgb(254, 245, 245);
-    height: auto;
+    height: 80vh;
     width: 24em;    
+    
 
     display: flex;
     gap: 0.5em;
@@ -88,8 +89,9 @@
 .mouthImageReg{
 
     position:absolute;
-    margin-top: 20em;
-    width: 10em;
+    margin-top: 22em;
+    margin-left: -2em;
+    width: 15em;
 
     transform: rotate(-10deg);
     rotate: 10deg;
@@ -101,21 +103,13 @@
      
 }
 
-#line{
-    border:1px;
-    
-    background-color: black;
-    height: 2px;
-    width: 105%;
-    margin-top: 0;
 
-}
 
 .rayImageReg{
 
     position:absolute;
     margin-top: 3em;
-    width: 7em;
+    width: 12em;
     
     transform: rotate(-10deg);
     rotate: 10deg;
@@ -124,8 +118,8 @@
 .mouseImageReg{
 
     position:absolute;
-    margin-top: 5em;
-    margin-left: 3em;
+    margin-top: 8em;
+    margin-left: -2em;
     width: 3em;
     
     transform: rotate(-10deg);
@@ -135,8 +129,8 @@
 .smileImageReg{
 
     position:absolute;
-    margin-top: 20em;
-    margin-left: -5em;
+    margin-top: 25em;
+    margin-left: 4em;
     
     /* width: 50px; */
     
@@ -168,10 +162,21 @@
 
 @media(max-width: 360px){
     .inputsBoxRegister{
-        margin: 2em; 
+        margin: 4em; 
         height: 100%;
+        
     }
-    /* .divContainerReg{
-        height: 50em;
-    } */
+    .registerDesign{
+        height: 110vh;
+    }
+   
+}
+
+
+/* .buttonDivReg{
+    height: -5em;
+} */
+
+.divContainerReg{
+    margin-top: 2em;;
 }
