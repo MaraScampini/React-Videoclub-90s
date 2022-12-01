@@ -1,13 +1,11 @@
 .aboutDesign{
-    /* background-color: rgb(210, 210, 238); */
-    height: 85%;
+    height: auto;
 }
 
 
 .col1{
     width: 50%;
-    height: 100%;
-    /* background-color: brown; */
+    /* height: 100%; */
     background-image: url("../../assets/pattern3.png");
     background-size: contain;
     
@@ -16,16 +14,13 @@
 
 
 .leftTarget{
-    height: 30em;
+    /* height: 30em; */
     display: flex;
 
     flex-direction: column;
     
 }
-.col2{
-    width: 50%;
-    background-color: blue;
-}
+
 
 .aboutTarget{
     background-color: white;
@@ -59,7 +54,33 @@
 
 }
 
-.textAbout{
-    padding: 1em, 
+
+.superEightTarget{
+    background-color: #FFF7E2;
+    width: auto;
+    height: auto;
+    margin: 4em;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0) 8px 8px;
+    border-radius: 15px;
+    border: 2px solid;
 }
 
+.superEightTarget::before {
+
+    content: url("../../assets/buttons.png");
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.4em 0.5em 0;
+    height: 7vh;
+    width: 100%;
+    border-bottom: 2px solid black;
+
+}
+
+.logoImageAbaut{
+    width: 12em;
+}

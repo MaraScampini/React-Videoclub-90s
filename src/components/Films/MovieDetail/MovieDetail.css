@@ -10,7 +10,7 @@
 #rowDesign{
   /* max-height: 100vh; */
   background-color: #ffe083;
-  height: 88.5vh;
+  height: auto;
 }
 
 
@@ -109,4 +109,12 @@
 
 .principalDiv{
   height: 80vh;
+
+}
+
+#rowDesign{
+  background-image: url("../../../assets/pattern1.png");
+  height:auto;
+    
+
 }
