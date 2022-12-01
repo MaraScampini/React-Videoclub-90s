@@ -98,7 +98,7 @@ const Login = () => {
       <Container>
         <Row className="row align-items-center justify-content-center">
           <Col className="col-md-4 imagesLog">
-             <Image className="smileImage zoom" src={smile}></Image>
+             <Image className="smileImageLog zoom" src={smile}></Image>
              <Image className="rayImage zoom" src={ray}></Image>
              <Image className="mouthImage zoom" src={mouth}></Image>
 
