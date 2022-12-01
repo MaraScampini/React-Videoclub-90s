@@ -7,6 +7,7 @@ import { addFilm, filmData } from "../../components/Films/filmSlice";
 
 import "./Movies.css";
 import FilmCard from "../../components/FilmCard/FilmCard";
+import { Col, Container, Row } from "react-bootstrap";
 
 function Movies() {
   const [movies, setMovies] = useState([]);
@@ -30,9 +31,9 @@ function Movies() {
 
   if (films.length !== 0 && query !== "") {
     return (
-      <div className="container-fluid homeDesign">
-        <div className="row d-flex justify-content-center">
-          <div className="col-10 rowDesign">
+      <Container className="container-fluid homeDesign">
+        <Row className="row d-flex justify-content-center">
+          <Col className="col-10 rowDesign">
             {films.map((film, index) => {
               return (
                 <FilmCard
@@ -42,23 +43,26 @@ function Movies() {
                 />
               );
             })}
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     );
   } else if (movies.length > 0) {
     return (
-      <div className="container-fluid homeDesign">
-        <div className="row d-flex justify-content-center">
-          <div className="col-10 rowDesign">
-            {movies.map((movie, index) => {
+      <Container className="container homeDesign">
+        <Row className="d-flex justify-content-center">
+          {movies.map((movie, index) => {
               return (
-                  <FilmCard key={index} movie={movie} clickedMovie={clickedMovie}/>
-              );
-            })}
-          </div>
-        </div>
-      </div>
+                <Col className="col-10 col-md-2 d-flex justify-content-center">
+                  <FilmCard
+                    key={index}
+                    movie={movie}
+                    clickedMovie={clickedMovie}
+                  />
+                </Col>
+              )})}
+        </Row>
+      </Container>
     );
   } else {
     return (
