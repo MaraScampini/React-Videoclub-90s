@@ -7,7 +7,7 @@ import "./MovieDetail.css";
 import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
 
-const URL = "http://localhost:3000";
+const URL = "https://videoclub-app-v2-production.up.railway.app";
 
 
 function MovieDetail() {

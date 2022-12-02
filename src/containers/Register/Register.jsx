@@ -50,7 +50,10 @@ const Register = () => {
   });
 
   const registerUser = async (body) => {
-    let res = await axios.post("http://localhost:3000/auth/register", body);
+    let res = await axios.post(
+      "https://videoclub-app-v2-production.up.railway.app/auth/register",
+      body
+    );
     navigate("/")
   };
 

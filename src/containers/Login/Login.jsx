@@ -38,7 +38,10 @@ const Login = () => {
   }
 
   const userLogin = async (body) => {
-    let res = await axios.post("http://localhost:3000/auth/login", body);
+    let res = await axios.post(
+      "https://videoclub-app-v2-production.up.railway.app/auth/login",
+      body
+    );
 
     let jwt = res.data.jwt;
     let credentials = {

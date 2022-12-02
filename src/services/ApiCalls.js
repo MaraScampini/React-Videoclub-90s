@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://localhost:3000";
+const URL = "https://videoclub-app-v2-production.up.railway.app";
 
 // GET
 
