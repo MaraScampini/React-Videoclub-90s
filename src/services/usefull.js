@@ -48,7 +48,7 @@ export const errorCheck = (value, type, password1) => {
 
     case "password2":
       if (value !== password1) {
-        return "Passwords dont match";
+        return "Passwords don't match";
       } else {
         return "";
       }

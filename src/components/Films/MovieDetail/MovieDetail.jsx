@@ -29,7 +29,6 @@ function MovieDetail() {
        let res = await axios.post(`${URL}/loans/movie`, bodyParameters, config);
        navigate("/");
      } catch (error) {
-       console.error(error);
      }
    };
 

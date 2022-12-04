@@ -13,6 +13,7 @@ function DirectedBy() {
   const moviesBy = useSelector(directorData);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  
   const clickedMovie = (movie) => {
     dispatch(addFilm({ ...movie, details: movie }));
     navigate("/filmdetail");

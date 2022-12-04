@@ -32,11 +32,8 @@ export const searchMovies = async (criteria) => {
 export const getByDirector = async (criteria) => {
   try {
     let res = await axios.get(`${URL}/movies/director/${criteria}`);
-    console.log(res)
-    console.log(res.data)
     return res.data;
   } catch (error) {
-    console.error(error);
   }
 };
 
@@ -46,7 +43,6 @@ export const myLoans = async (token) => {
   };
   try {
     let res = await axios.get(`${URL}/loans/myloans`, config);
-    console.log(res);
 
     return res.data.resp;
   } catch (error) {

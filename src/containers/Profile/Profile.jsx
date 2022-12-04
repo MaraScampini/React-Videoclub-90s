@@ -14,11 +14,6 @@ const Profile = () => {
   const navigate = useNavigate();
     const token = localStorage.getItem("jwt");
     let { decodedToken } = useJwt(token);
-    console.log({decodedToken});
-
-
- 
-
 
   const [user, setUser] = useState({
     username: "",
