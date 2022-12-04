@@ -16,6 +16,10 @@
 **-Tecnologías y dependencias:** 
 
 ![logos-tecnologias-utilizadas3](https://user-images.githubusercontent.com/113507322/205345377-539842e5-3691-4a3a-8919-5fe9a843dcc2.jpg)
+
+ ### Acceso a la aplicación
+
+> https://aws.dj0c9kx8vvwww.amplifyapp.com/
  
  ### Descripción general del proyecto 
 
