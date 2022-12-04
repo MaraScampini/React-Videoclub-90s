@@ -20,7 +20,12 @@
  ### Acceso a la aplicación
 
 > https://aws.dj0c9kx8vvwww.amplifyapp.com/
- 
+
+Datos de acceso como usuario: 
+
+> Mail: admin@admin.com // Password: Admin1234
+
+
  ### Descripción general del proyecto 
 
 El siguiente ejercicio consiste en el diseño y desarrollo de un FRONTEND para una APP funcional que ofrece el servicio de alquiler de películas. Este FRONTEND conecta
