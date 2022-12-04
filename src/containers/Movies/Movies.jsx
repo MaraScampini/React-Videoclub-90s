@@ -67,7 +67,7 @@ function Movies() {
   } else {
     return (
       <div className="homeDesignEmpty">
-        We're sorry, the service is not available.
+        <span class="loader"></span>
       </div>
     );
   }
