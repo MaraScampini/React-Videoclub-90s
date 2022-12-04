@@ -19,9 +19,9 @@
 
  ### Acceso a la aplicación
 
-> https://aws.dj0c9kx8vvwww.amplifyapp.com/
+> https://main.d2zdcocbf8dhlm.amplifyapp.com/
 
-Datos de acceso como usuario: 
+Datos de acceso como administrador: 
 
 > Mail: admin@admin.com // Password: Admin1234
 
@@ -82,14 +82,15 @@ El login nos da acceso a la página como usuarios ya registrados. Para logearnos
 
 **-->WELCOME USER**
 
-La primera pantalla que vemos conforme ingresamos como usuarios es la de nuestros alquileres activos. Desde aquí podemos acceder a las películas que están en nuestro plazo de alquiler. Si clicamos sobre la tarjeta de una de las películas podemos ir a ver su información y desde esta pantalla podremos devolverla. 
+La primera pantalla que vemos conforme ingresamos como usuarios es la de nuestros alquileres activos con la fecha del alquiler. Desde aquí podemos acceder a las películas que están en nuestro plazo de alquiler. Si clicamos sobre la tarjeta de una de las películas podemos ir a ver su información y desde esta pantalla podremos devolverla. 
 
-![welcome-user](https://user-images.githubusercontent.com/113507322/205173496-670210dc-2a2c-4e12-a1b0-d742ef500138.png)
+![admin-loans](https://user-images.githubusercontent.com/113507322/205505236-84aa2644-44ea-4109-89bf-1b8845e5dfb8.png)
+
 
 
 **-->MOVIE DETAIL**
 
-Si clicamos sobre la tarjeta de una de las películas podemos ir a ver su información, título, director y descripción. Si pulsamos sobre el nombre del director, tendremos acceso a la colección de películas del videoclub dirigidas por el mismo autor. Además, desde esta pantalla podremos proceder a la devolución de la película si todavía se encuentra activa.
+Si clicamos sobre la tarjeta de una de las películas podemos ir a ver su información, título, director y descripción. Si pulsamos sobre el nombre del director, tendremos acceso a la colección de películas del videoclub dirigidas por el mismo autor. Además, desde esta pantalla podremos proceder a la devolución de la película si todavía se encuentra activa. Si la vista corresponde a una película que NO tenemos alquilada, nos dará la opción de hacerlo. Además, en esta misma vista, si no estamos ni registrados ni logueados, no nos dará la opción de alquilar y solo podremos ver la información de la película. 
 
 ![movie-detail](https://user-images.githubusercontent.com/113507322/205174130-fce0fa6c-2710-44f1-b246-dc14c2090170.png)
 
