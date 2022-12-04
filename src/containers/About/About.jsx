@@ -16,7 +16,7 @@ const About = () => {
 
                     <div className="aboutTarget text-center">
 
-                        <h3 className="tittleAbout">VUELVE A LOS 90s </h3>
+                        <h3 className="tittleAbout">BACK TO THE 90s </h3>
                         <p className="p-3">
                             The best movies from the 90s show that, without them, it would be impossible to understand Hollywood's, and cinema as a whole, history. The wonderful 90s gave us many of our favourite movies and the best movie posters, that would end up decorating every teenage room in the world. <br/>From the best horror movies to the greatest musicals and the funniest Disney movies, SUPER EIGHT will help you celebrate the legacy of the most amazing decade. We've curated a list with the best of the best from a unique era, that shone in tacky clothing, Tamagotchi, <i>Saved by the Bell</i> and, as you can see, the best movies.
                             </p>
