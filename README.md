@@ -59,7 +59,7 @@ La aplicación permite la navegación entre las distintas pantallas que la compo
 **-->HOME / MOVIES**
  
  
-La vista HOME es la primera vista que nos encontramos al entrar en la web. En ella podemos previsualizar las películas y tenemos acceso a la barra del buscador ubicada en el 'header'. En ella podremos buscar entre el contenido de las películas y el predictor de texto nos ayudará en la búsqueda. 
+La vista HOME es la primera vista que nos encontramos al entrar en la web. Sin estar logueados, en ella podemos previsualizar las películas TOP RATED. Una vez logueados, tendremos acceso a todas las películas. En ambos casos tenemos acceso a la barra del buscador ubicada en el 'header'. En ella podremos buscar entre el contenido de las películas y el predictor de texto nos ayudará en la búsqueda. 
 
 Desde el 'header' tenemos acceso a las páginas 'About us', 'Register' donde podremos dar de alta a un usuario, y 'Login' para dar acceso a los usuarios ya registrados. 
 
