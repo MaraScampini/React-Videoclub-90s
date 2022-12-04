@@ -68,11 +68,14 @@ const Home = () => {
           {loans.map((movie, index) => {
             return (
               <Col className="col-10 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
-                <FilmCard
-                  key={index}
-                  movie={movie.Movie}
-                  clickedMovie={clickedMovie}
-                />
+                <div className="d-flex flex-column">
+                  <FilmCard
+                    key={index}
+                    movie={movie.Movie}
+                    clickedMovie={clickedMovie}
+                  />
+                  <div className="dateCard">RENTED AT: {movie.date}</div>
+                </div>
               </Col>
             );
           })}
