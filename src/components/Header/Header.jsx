@@ -21,7 +21,6 @@ const Header = () => {
   const navigate = useNavigate();
   const token = localStorage.getItem("jwt");
   let {decodedToken} = useJwt(token);
-  console.log(decodedToken)
   if (decodedToken === null) {
     decodedToken = { name: "" };
   }
@@ -29,7 +28,6 @@ const Header = () => {
 
   const criteriaHandler = (e) => {
     setCriteria(e.target.value);
-    console.log(criteria);
   };
 
   // Functions
@@ -41,7 +39,6 @@ const Header = () => {
 
   const isAdmin = () => {
     if(decodedToken.role == "admin"){
-      console.log(decodedToken.role)
       return true;
     } else {
       return false;

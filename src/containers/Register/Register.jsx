@@ -86,7 +86,6 @@ const Register = () => {
       .then((created) => console.log(created))
       .catch((error) => {setUserError(
         (prevState) => (
-          console.log(error),
           {
             ...prevState,
             emailAlreadyInBBDD: error.response.data,

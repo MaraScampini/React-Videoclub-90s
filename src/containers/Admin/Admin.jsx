@@ -28,12 +28,10 @@ function Admin() {
 
   useEffect(() => {
     getAllUsers(token).then((users) => setUsers(users));
-    console.log("first")
   }, [deleted]);
   
     useEffect(() => {
       getAllDeletedUsers(token).then((deletedUsers) => setDeletedUsers(deletedUsers));
-      console.log("second")
     }, [deleted]);
 
 

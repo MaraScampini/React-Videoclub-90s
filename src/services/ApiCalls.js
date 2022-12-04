@@ -32,8 +32,6 @@ export const searchMovies = async (criteria) => {
 export const getByDirector = async (criteria) => {
   try {
     let res = await axios.get(`${URL}/movies/director/${criteria}`);
-    console.log(res)
-    console.log(res.data)
     return res.data;
   } catch (error) {
     console.error(error);
@@ -46,7 +44,6 @@ export const myLoans = async (token) => {
   };
   try {
     let res = await axios.get(`${URL}/loans/myloans`, config);
-    console.log(res);
 
     return res.data.resp;
   } catch (error) {
@@ -72,7 +69,6 @@ export const getAllUsers = async (token) => {
   };
   try {
     let res = await axios.get(`${URL}/users/all`, config);
-    console.log(res);
 
     return res.data;
   } catch (error) {
@@ -86,7 +82,6 @@ export const getAllDeletedUsers = async (token) => {
   };
   try {
     let res = await axios.get(`${URL}/users/deleted`, config);
-    console.log(res);
 
     return res.data;
   } catch (error) {
@@ -123,7 +118,6 @@ export const deleteUser = async (body, token) => {
   };
   try {
     let res = await axios.patch(`${URL}/users/delete`, bodyParameters, config);
-    console.log(body);
     return res;
   } catch (error) {}
 };

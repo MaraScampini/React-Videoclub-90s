@@ -14,7 +14,6 @@ const Profile = () => {
   const navigate = useNavigate();
     const token = localStorage.getItem("jwt");
     let { decodedToken } = useJwt(token);
-    console.log({decodedToken});
 
 
  
@@ -38,7 +37,6 @@ const Profile = () => {
       ...prevState,
       username: decodedToken?.username,
     }));
-    console.log({ decodedToken });
   }, [decodedToken]);
 
   const validateBody = (body) => {
