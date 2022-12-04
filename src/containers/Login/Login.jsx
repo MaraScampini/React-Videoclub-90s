@@ -62,7 +62,6 @@ const Login = () => {
       userLogin(body)
         .then((created) => console.log(created))
         .catch((error) => {
-          console.log(error.response.data)
           setUserError((prevState) => ({
             ...prevState,
             wrongCredentials: error.response.data.message,

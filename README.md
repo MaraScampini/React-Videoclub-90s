@@ -15,17 +15,7 @@
 
 **-Tecnologías y dependencias:** 
 
- - REACT
- - REDUX
- - BOOTSTRAP
- - JAVASCRIPT
- - NODE
- - NODEMON
- - SQL
- - SEQUELIZE
- - EXPRESS JS
- - JWT
- 
+![logos-tecnologias-utilizadas3](https://user-images.githubusercontent.com/113507322/205345377-539842e5-3691-4a3a-8919-5fe9a843dcc2.jpg)
  
  ### Descripción general del proyecto 
 
@@ -47,21 +37,6 @@ con una API que permite la conexión con una BASE DE DATOS SQL donde se encuentr
  ![moodboard-1](https://user-images.githubusercontent.com/113507322/204105036-a9d41883-f395-4caf-b97f-2d03d743532a.png)
 
  
-### BACKEND
-
-
-### DB: Tablas y relaciones
-
-La base de datos consta de 5 tablas: LOANS, MOVIES, USERS, FAVOURITES and ROLES. Al tratarse de un modelo relacional de base de datos, las relaciones entre las tablas son las siguientes: 
-
-- La tabla MOVIES tiene una relación de "1 TO MANY" (1:N) con la tabla LOANS. 
-- La tabla USERS tiene una relación de "1 TO MANY" (1:N) con la tabla LOANS. 
-- La tabla FAVOURITES tiene una relación de "1 TO MANY" (1:N) con la tabla USERS y la tabla MOVIES.
-- La tabla ROLES tiene una relación de "1 TO MANY" (1:N) con la tabla USERS. 
-
-
-![db-videoclubapp-tables](https://user-images.githubusercontent.com/113507322/204104192-db72dea8-0798-496d-a896-1598a08056fd.png)
-
 
 ### FRONTEND
  
