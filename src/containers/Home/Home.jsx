@@ -45,12 +45,11 @@ const Home = () => {
         <Row className="d-flex justify-content-center">
           {films.map((film, index) => {
             return (
-              <Col className="col-10 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
-                <FilmCard
-                  key={index}
-                  movie={film}
-                  clickedMovie={clickedMovie}
-                />
+              <Col
+                key={index}
+                className="col-10 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center"
+              >
+                <FilmCard movie={film} clickedMovie={clickedMovie} />
               </Col>
             );
           })}
@@ -67,13 +66,12 @@ const Home = () => {
         <Row className="d-flex justify-content-center">
           {loans.map((movie, index) => {
             return (
-              <Col className="col-10 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+              <Col
+                key={index}
+                className="col-10 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center"
+              >
                 <div className="d-flex flex-column">
-                  <FilmCard
-                    key={index}
-                    movie={movie.Movie}
-                    clickedMovie={clickedMovie}
-                  />
+                  <FilmCard movie={movie.Movie} clickedMovie={clickedMovie} />
                   <div className="dateCard">RENTED AT: {movie.date}</div>
                 </div>
               </Col>
@@ -88,12 +86,11 @@ const Home = () => {
         <Row className="d-flex justify-content-center">
           {movies.map((movie, index) => {
             return (
-              <Col className="col-10 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center ">
-                <FilmCard
-                  key={index}
-                  movie={movie}
-                  clickedMovie={clickedMovie}
-                />
+              <Col
+                key={index}
+                className="col-10 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center "
+              >
+                <FilmCard movie={movie} clickedMovie={clickedMovie} />
               </Col>
             );
           })}
@@ -103,7 +100,7 @@ const Home = () => {
   } else {
     return (
       <div className="homeDesignEmpty">
-        <span class="loader"></span>
+        <span className="loader"></span>
       </div>
     );
   }
