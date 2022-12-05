@@ -74,19 +74,19 @@ const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav" className="m-auto">
             <Nav
               onClick={() => navigate("/movies")}
-              className="fw-bold m-auto text-center"
+              className="fw-bold m-auto text-center linkDesign"
             >
               Movies
             </Nav>
             <Nav
               onClick={() => navigate("/about")}
-              className="fw-bold mx-auto mt-1 mb-md-1 text-center"
+              className="fw-bold mx-auto mt-1 mb-md-1 text-center linkDesign"
             >
               About Us
             </Nav>
 
             <Form
-              className="formDesign d-flex mt-1 mb-md-1 m-auto"
+              className="formDesign d-flex mt-1 mb-md-1 m-auto linkDesign"
               onSubmit={submitHandler}
             >
               <Form.Control
@@ -111,7 +111,7 @@ const Header = () => {
             </Form>
             <Nav
               onClick={() => navigate("/profile")}
-              className="fw-bold mx-auto mt-1 mb-md-1 text-center"
+              className="fw-bold mx-auto mt-1 mb-md-1 text-center linkDesign"
             >
               <div>
                 <Image className="userLogo" src={userLogo}></Image>
@@ -121,7 +121,7 @@ const Header = () => {
             {isAdmin() ? (
               <Nav
                 onClick={() => navigate("/admin")}
-                className="fw-bold mx-auto mt-1 mb-md-1 text-center"
+                className="fw-bold mx-auto mt-1 mb-md-1 text-center linkDesign"
               >
                 Admin
               </Nav>
@@ -130,7 +130,7 @@ const Header = () => {
             )}
             <Nav
               onClick={() => logout()}
-              className="fw-bold mx-auto mt-1 mb-md-1 text-center"
+              className="fw-bold mx-auto mt-1 mb-md-1 text-center linkDesign"
             >
               Logout
             </Nav>
