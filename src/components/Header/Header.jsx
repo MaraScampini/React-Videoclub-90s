@@ -142,23 +142,28 @@ const Header = () => {
     return (
       <Navbar collapseOnSelect expand="lg" className="headerDesign">
         <Container>
-          <Navbar.Brand onClick={() => navigate("/")}><Image className="logoImage zoomLogo" src={logo}></Image></Navbar.Brand>
+          <Navbar.Brand onClick={() => navigate("/")}>
+            <Image className="logoImage zoomLogo" src={logo}></Image>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav" className="m-auto">
             <Nav
               onClick={() => navigate("/movies")}
-              className="fw-bold m-auto text-center"
+              className="fw-bold m-auto text-center linkDesign"
             >
               Movies
             </Nav>
             <Nav
               onClick={() => navigate("/about")}
-              className="fw-bold mx-auto mt-1 mb-md-1 text-center"
+              className="fw-bold mx-auto mt-1 mb-md-1 text-center linkDesign"
             >
               About Us
             </Nav>
 
-            <Form className="formDesign d-flex mt-1 mb-md-1 m-auto">
+            <Form
+              onSubmit={submitHandler}
+              className="formDesign d-flex mt-1 mb-md-1 m-auto"
+            >
               <Form.Control
                 type="search"
                 placeholder="Search"
@@ -181,13 +186,13 @@ const Header = () => {
             </Form>
             <Nav
               onClick={() => navigate("/login")}
-              className="fw-bold mx-auto mt-1 mb-md-1 text-center"
+              className="fw-bold mx-auto mt-1 mb-md-1 text-center linkDesign"
             >
               Login
             </Nav>
             <Nav
               onClick={() => navigate("/register")}
-              className="fw-bold mx-auto mt-1 mb-md-1 text-center"
+              className="fw-bold mx-auto mt-1 mb-md-1 text-center linkDesign"
             >
               Register
             </Nav>
