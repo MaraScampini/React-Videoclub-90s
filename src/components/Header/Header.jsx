@@ -6,6 +6,8 @@ import { addSearch, filmData, addCriteria } from "../Films/filmSlice";
 import { logout, login, userData } from "../../containers/User/userSlice";
 import { searchMovies } from "../../services/ApiCalls";
 import { useJwt, decodeToken } from "react-jwt";
+import { debounce } from "lodash";
+
 import Image from "react-bootstrap/Image";
 import logo from "../../assets/logo.png"
 import userLogo from "../../assets/userLogo.png"
@@ -26,9 +28,9 @@ const Header = () => {
   }
   // Handlers
 
-  const criteriaHandler = (e) => {
-    setCriteria(e.target.value);
-  };
+  const criteriaHandler = debounce((e) => {
+    setCriteria(e.target.value)
+  }, 500);
 
   // Functions
 
