@@ -46,7 +46,7 @@ export const myLoans = async (token) => {
 
     return res.data.resp;
   } catch (error) {
-    console.error(error);
+    return;
   }
 };
 

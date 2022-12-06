@@ -49,7 +49,9 @@ function MovieDetail() {
    };
 
   useEffect(() => {
-    myLoans(token).then((loans) => setLoans(loans));
+    if(token){
+      myLoans(token).then((loans) => setLoans(loans));
+    }
   }, []);
 
   let myLoansIds = [];
